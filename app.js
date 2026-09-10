@@ -18,16 +18,8 @@
   if (typeof document.querySelector('#menu-dialog').showModal === 'function') {
     menuButton.hidden = false;
     menuButton.addEventListener('click',()=>open(document.querySelector('#menu-dialog'),menuButton));
-    document.querySelector('[data-contact-open]').addEventListener('click',event=>{if(open(document.querySelector('#contact-dialog'),event.currentTarget))event.preventDefault();});
+    document.querySelector('[data-contact-open]').addEventListener('click',event=>{if(window.matchMedia('(max-width: 767px)').matches && open(document.querySelector('#contact-dialog'),event.currentTarget))event.preventDefault();});
   }
-  document.querySelectorAll('[data-copy]').forEach(button=>{
-    button.hidden=false;
-    button.addEventListener('click',async()=>{
-      const status=button.parentElement.querySelector('.copy-status');
-      try{await navigator.clipboard.writeText('+79088990088');status.textContent='Номер скопирован. Найдите меня в MAX: +79088990088.';}
-      catch{status.textContent='Не удалось скопировать автоматически. Номер для копирования: +79088990088.';}
-    });
-  });
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   if('IntersectionObserver' in window && !reduced.matches){
     document.documentElement.classList.add('motion-ready');
