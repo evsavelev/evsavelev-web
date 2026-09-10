@@ -6,14 +6,14 @@ const base = 'https://evsavelev.github.io/evsavelev-web/';
 const projects = require('../data/projects.json');
 const escape = s => s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const cards = projects.map((p,i) => `<article class="project reveal">
-  <a class="project-image" href="https://evsavelev.github.io/${p.slug}/" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт ${escape(p.name)} в новой вкладке">
+  <a class="project-image" href="${escape(p.url || `https://evsavelev.github.io/${p.slug}/`)}" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт ${escape(p.name)} в новой вкладке">
     <img src="assets/portfolio/${p.slug}-720.webp" srcset="assets/portfolio/${p.slug}-720.webp 720w, assets/portfolio/${p.slug}-1440.webp 1440w" sizes="(max-width: 767px) calc(100vw - 40px), (max-width: 1416px) calc((100vw - 96px) / 2), 644px" width="1440" height="1000" loading="lazy" decoding="async" alt="Главная страница сайта «${escape(p.name)}» — ${escape(p.niche.toLowerCase())}">
     <span class="preview-arrow" aria-hidden="true">↗</span>
   </a>
   <div class="project-caption"><span class="project-number">${String(i+1).padStart(2,'0')}</span><span>${escape(p.niche)}</span></div>
   <h3>${escape(p.name)}</h3><p class="project-task">${escape(p.task)}</p>
   <ul class="project-features">${p.features.map(f=>`<li>${escape(f)}</li>`).join('')}</ul>
-  <a class="project-link" href="https://evsavelev.github.io/${p.slug}/" target="_blank" rel="noopener noreferrer">Открыть сайт <span aria-hidden="true">↗</span><span class="sr-only"> ${escape(p.name)}, в новой вкладке</span></a>
+  <a class="project-link" href="${escape(p.url || `https://evsavelev.github.io/${p.slug}/`)}" target="_blank" rel="noopener noreferrer">Открыть сайт <span aria-hidden="true">↗</span><span class="sr-only"> ${escape(p.name)}, в новой вкладке</span></a>
 </article>`).join('\n');
 let html = fs.readFileSync(path.join(root,'index.html'),'utf8').replace('<!-- PROJECTS -->',cards);
 fs.mkdirSync(out,{recursive:true});

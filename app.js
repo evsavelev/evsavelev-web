@@ -1,4 +1,20 @@
 (() => {
+  const portfolio=document.querySelector('#portfolio-content');
+  const workTitle=document.querySelector('#work-title');
+  const workToggle=document.querySelector('[data-work-toggle]');
+  const workOpen=document.querySelector('[data-work-open]');
+  const setPortfolio=(expanded, navigate=false)=>{
+    portfolio.hidden=!expanded;
+    portfolio.toggleAttribute('data-open',expanded);
+    [workToggle,workOpen].forEach(button=>button.setAttribute('aria-expanded',String(expanded)));
+    workToggle.textContent=expanded?'Скрыть работы':'Посмотреть работы';
+    if(navigate){workTitle.focus({preventScroll:true});document.querySelector('#work').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth',block:'start'});}
+  };
+  setPortfolio(location.hash==='#work');
+  workOpen.addEventListener('click',()=>setPortfolio(true,true));
+  workToggle.addEventListener('click',()=>{const opening=portfolio.hidden;setPortfolio(opening,opening);});
+  document.querySelectorAll('a[href="#work"]').forEach(link=>link.addEventListener('click',event=>{event.preventDefault();if(location.hash!=='#work')history.pushState(null,'','#work');setPortfolio(true);requestAnimationFrame(()=>setPortfolio(true,true));}));
+  window.addEventListener('hashchange',()=>{if(location.hash==='#work')setPortfolio(true,true);});
   const dialogs = [...document.querySelectorAll('dialog')];
   const menuButton = document.querySelector('.menu-toggle');
   const open = (dialog, invoker) => { if (typeof dialog.showModal !== 'function') return false; dialog.returnFocus=invoker || document.activeElement; dialog.showModal(); document.body.classList.add('dialog-open'); return true; };
@@ -13,7 +29,7 @@
       else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
     });
     dialog.addEventListener('click', event => { if(event.target === dialog){const r=dialog.getBoundingClientRect(); if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();} });
-    dialog.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>dialog.close()));
+    dialog.querySelectorAll('a[href^="#"]').forEach(link=>link.addEventListener('click',()=>{if(link.getAttribute('href')==='#work')dialog.returnFocus=null;dialog.close();}));
   });
   if (typeof document.querySelector('#menu-dialog').showModal === 'function') {
     menuButton.hidden = false;

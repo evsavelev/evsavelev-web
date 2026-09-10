@@ -1,0 +1,30 @@
+[
+  {
+    "file": "assets/portfolio/international-business-settlements-720.webp",
+    "source": "https://international-business-settlements.evsavelev-region.chatgpt.site/",
+    "width": 720,
+    "height": 500,
+    "bytes": 30706
+  },
+  {
+    "file": "assets/portfolio/international-business-settlements-1440.webp",
+    "source": "https://international-business-settlements.evsavelev-region.chatgpt.site/",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 72888
+  },
+  {
+    "file": "assets/portfolio/bitok-consulting-720.webp",
+    "source": "https://bitok-consulting.github.io/",
+    "width": 720,
+    "height": 500,
+    "bytes": 38550
+  },
+  {
+    "file": "assets/portfolio/bitok-consulting-1440.webp",
+    "source": "https://bitok-consulting.github.io/",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 94448
+  }
+]

@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f0f0f0">
+  <script>document.documentElement.classList.add('portfolio-js');</script>
   <title>Создание сайтов для бизнеса — Евгений Савельев</title>
   <meta name="description" content="Создаю лендинги, сайты компаний и каталоги: от структуры и дизайна до публикации. Посмотрите примеры работ и обсудите свой сайт напрямую с Евгением Савельевым.">
   <link rel="canonical" href="https://evsavelev.github.io/evsavelev-web/">
@@ -40,14 +41,16 @@
       <h1 id="hero-title">Сайты для бизнеса.<br>От идеи<br class="mobile-break"> до публикации.</h1>
       <div class="hero-bottom">
         <p class="hero-copy">Лендинги, сайты компаний и каталоги.<br>Продумываю структуру, создаю дизайн<br class="desktop-break"> и довожу сайт до запуска.</p>
-        <div class="hero-actions"><a class="button" href="#work">Посмотреть работы <span aria-hidden="true">↓</span></a><a class="button button-outline" href="#contact" data-contact-open>Обсудить сайт <span aria-hidden="true">↗</span></a></div>
+        <div class="hero-actions"><a class="button" href="#work" data-work-fallback>Посмотреть работы <span aria-hidden="true">↓</span></a><button class="button work-toggle" type="button" data-work-open aria-expanded="false" aria-controls="portfolio-content">Посмотреть работы <span aria-hidden="true">↓</span></button><a class="button button-outline" href="#contact" data-contact-open>Обсудить сайт <span aria-hidden="true">↗</span></a></div>
       </div>
       <div class="hero-direct"><a href="tel:+79088990088">+7 908 899-00-88</a><a href="https://wa.me/79088990088" target="_blank" rel="noopener noreferrer">WhatsApp ↗</a><a href="https://t.me/+79088990088?profile" target="_blank" rel="noopener noreferrer">Telegram ↗</a></div>
     </section>
     <section class="work wrap section" id="work" aria-labelledby="work-title">
-      <div class="section-heading"><h2 id="work-title">Примеры<br>моих работ</h2><p>Разные ниши и задачи.<br>Свой характер у каждого сайта.</p></div>
-      <div class="project-grid"><!-- PROJECTS --></div>
+      <div class="section-heading"><h2 id="work-title" tabindex="-1">Примеры<br>моих работ</h2><p>Разные ниши и задачи.<br>Свой характер у каждого сайта.</p></div>
+      <button class="button button-outline work-toggle work-section-toggle" type="button" data-work-toggle aria-expanded="false" aria-controls="portfolio-content">Посмотреть работы</button>
+      <div id="portfolio-content"><div class="project-grid"><!-- PROJECTS --></div>
       <p class="portfolio-note">Самостоятельные демонстрационные проекты. Можно открыть каждый сайт и посмотреть, как он работает.</p>
+      </div>
     </section>
     <section class="services wrap section" id="services" aria-labelledby="services-title">
       <div class="section-heading reveal"><h2 id="services-title">Какой сайт<br>нужен вашему делу?</h2><p>Начнём с задачи.<br>Подберём подходящий формат.</p></div>
