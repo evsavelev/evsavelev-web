@@ -17,7 +17,11 @@ const check=(name,condition)=>{assert.ok(condition,name);report.checks.push(name
    check(`${width}: one H1 and eight projects`,await page.locator('h1').count()===1&&await page.locator('.project').count()===8);
    await page.screenshot({path:`${dir}/hero-${width}.png`});
    for(const image of await page.locator('.project img').all()){await image.scrollIntoViewIfNeeded();await image.evaluate(img=>img.decode());}
-   const broken=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>!i.complete||!i.naturalWidth||!i.alt||!i.width||!i.height).map(i=>i.src));check(`${width}: all eight previews loaded with alt/dimensions`,broken.length===0);
+   await page.locator('.about-portrait img').scrollIntoViewIfNeeded();await page.locator('.about-portrait img').evaluate(i=>i.decode());
+   const broken=await page.locator('img').evaluateAll(imgs=>imgs.filter(i=>!i.complete||!i.naturalWidth||!i.alt||!i.width||!i.height).map(i=>i.src));check(`${width}: eight previews and portrait loaded with alt/dimensions`,broken.length===0);
+   check(`${width}: portrait lazy and full frame`,await page.locator('.about-portrait img').evaluate(i=>i.loading==='lazy'&&getComputedStyle(i).objectFit==='contain'&&i.alt==='Евгений Савельев — создание сайтов для бизнеса'));
+   await page.locator('.about-portrait').screenshot({path:`${dir}/portrait-${width}.png`});
+   await page.locator('.about-cta').scrollIntoViewIfNeeded();await page.screenshot({path:`${dir}/about-${width}.png`});await page.locator('.about-cta').click();check(`${width}: personal CTA reaches contacts`,page.url().endsWith('#contact'));
    const overflow=await page.evaluate(()=>document.documentElement.scrollWidth>innerWidth);check(`${width}: no horizontal overflow`,!overflow);
    const anchors=await page.locator('a[href^="#"]').evaluateAll(links=>links.map(l=>l.getAttribute('href')).filter(h=>h.length>1&&!document.getElementById(h.slice(1))));check(`${width}: internal anchors resolve`,anchors.length===0);
    await page.locator('#contact').scrollIntoViewIfNeeded();await page.screenshot({path:`${dir}/contact-${width}.png`});
@@ -32,7 +36,7 @@ const check=(name,condition)=>{assert.ok(condition,name);report.checks.push(name
    }
    const badTargets=await page.locator('a,button').evaluateAll(nodes=>nodes.filter(e=>e.getClientRects().length&&getComputedStyle(e).visibility!=='hidden').filter(e=>{const r=e.getBoundingClientRect();return r.width<24||r.height<44}).map(e=>({text:e.textContent.trim(),height:e.getBoundingClientRect().height})));check(`${width}: visible targets min 44px high`,badTargets.length===0);
    await page.evaluate(()=>scrollTo(0,0));await page.screenshot({path:`${dir}/full-${width}.png`,fullPage:true});
-   report.widths.push({width,status:response.status(),height:await page.evaluate(()=>document.body.scrollHeight),images:8,overflow});await context.close();console.log('Passed viewport',width);
+   report.widths.push({width,status:response.status(),height:await page.evaluate(()=>document.body.scrollHeight),images:9,portfolioImages:8,overflow});await context.close();console.log('Passed viewport',width);
   }
   const page=await browser.newPage();await page.goto(base);
   const metadata=await page.evaluate(()=>({title:document.title,description:document.querySelector('meta[name="description"]').content,canonical:document.querySelector('link[rel="canonical"]').href,og:document.querySelector('meta[property="og:image"]').content,schema:JSON.parse(document.querySelector('[type="application/ld+json"]').textContent),lang:document.documentElement.lang}));report.metadata=metadata;

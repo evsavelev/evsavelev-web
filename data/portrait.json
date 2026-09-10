@@ -1,0 +1,29 @@
+{
+  "source": "ChatGPT Image 10 сент. 2026 г., 18_31_57.png",
+  "sourceSha256": "dc83500c033acd9ed646d98cbbe705c38663018551076728993bca30fd4e79cc",
+  "originalSize": [
+    1122,
+    1402
+  ],
+  "preparation": "User-authorized technical resize and WebP encoding only; full original frame; no retouching, generation, color or identity changes",
+  "variants": [
+    {
+      "file": "assets/images/evgeniy-savelev-480.webp",
+      "width": 480,
+      "height": 600,
+      "bytes": 13720
+    },
+    {
+      "file": "assets/images/evgeniy-savelev-720.webp",
+      "width": 720,
+      "height": 900,
+      "bytes": 26974
+    },
+    {
+      "file": "assets/images/evgeniy-savelev-960.webp",
+      "width": 960,
+      "height": 1200,
+      "bytes": 46542
+    }
+  ]
+}
