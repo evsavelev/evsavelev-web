@@ -1,0 +1,223 @@
+{
+  "date": "2026-09-10T13:49:54.096Z",
+  "base": "https://evsavelev.github.io/evsavelev-web/",
+  "widths": [
+    {
+      "width": 360,
+      "status": 200,
+      "height": 9734,
+      "images": 8,
+      "overflow": false
+    },
+    {
+      "width": 390,
+      "status": 200,
+      "height": 9668,
+      "images": 8,
+      "overflow": false
+    },
+    {
+      "width": 430,
+      "status": 200,
+      "height": 9733,
+      "images": 8,
+      "overflow": false
+    },
+    {
+      "width": 768,
+      "status": 200,
+      "height": 7116,
+      "images": 8,
+      "overflow": false
+    },
+    {
+      "width": 1024,
+      "status": 200,
+      "height": 7032,
+      "images": 8,
+      "overflow": false
+    },
+    {
+      "width": 1440,
+      "status": 200,
+      "height": 7406,
+      "images": 8,
+      "overflow": false
+    }
+  ],
+  "checks": [
+    "360: HTTP 200",
+    "360: one H1 and eight projects",
+    "360: all eight previews loaded with alt/dimensions",
+    "360: no horizontal overflow",
+    "360: internal anchors resolve",
+    "360: MAX clipboard",
+    "360: contact dialog and bar hidden",
+    "360: focus trapped 0",
+    "360: focus trapped 1",
+    "360: focus trapped 2",
+    "360: focus trapped 3",
+    "360: focus trapped 4",
+    "360: focus trapped 5",
+    "360: focus trapped 6",
+    "360: focus trapped 7",
+    "360: focus trapped 8",
+    "360: focus trapped 9",
+    "360: Escape and focus restored",
+    "360: mobile menu",
+    "360: menu closes on anchor",
+    "360: close button",
+    "360: visible targets min 44px high",
+    "390: HTTP 200",
+    "390: one H1 and eight projects",
+    "390: all eight previews loaded with alt/dimensions",
+    "390: no horizontal overflow",
+    "390: internal anchors resolve",
+    "390: MAX clipboard",
+    "390: contact dialog and bar hidden",
+    "390: focus trapped 0",
+    "390: focus trapped 1",
+    "390: focus trapped 2",
+    "390: focus trapped 3",
+    "390: focus trapped 4",
+    "390: focus trapped 5",
+    "390: focus trapped 6",
+    "390: focus trapped 7",
+    "390: focus trapped 8",
+    "390: focus trapped 9",
+    "390: Escape and focus restored",
+    "390: mobile menu",
+    "390: menu closes on anchor",
+    "390: close button",
+    "390: visible targets min 44px high",
+    "430: HTTP 200",
+    "430: one H1 and eight projects",
+    "430: all eight previews loaded with alt/dimensions",
+    "430: no horizontal overflow",
+    "430: internal anchors resolve",
+    "430: MAX clipboard",
+    "430: contact dialog and bar hidden",
+    "430: focus trapped 0",
+    "430: focus trapped 1",
+    "430: focus trapped 2",
+    "430: focus trapped 3",
+    "430: focus trapped 4",
+    "430: focus trapped 5",
+    "430: focus trapped 6",
+    "430: focus trapped 7",
+    "430: focus trapped 8",
+    "430: focus trapped 9",
+    "430: Escape and focus restored",
+    "430: mobile menu",
+    "430: menu closes on anchor",
+    "430: close button",
+    "430: visible targets min 44px high",
+    "768: HTTP 200",
+    "768: one H1 and eight projects",
+    "768: all eight previews loaded with alt/dimensions",
+    "768: no horizontal overflow",
+    "768: internal anchors resolve",
+    "768: MAX clipboard",
+    "768: visible targets min 44px high",
+    "1024: HTTP 200",
+    "1024: one H1 and eight projects",
+    "1024: all eight previews loaded with alt/dimensions",
+    "1024: no horizontal overflow",
+    "1024: internal anchors resolve",
+    "1024: MAX clipboard",
+    "1024: visible targets min 44px high",
+    "1440: HTTP 200",
+    "1440: one H1 and eight projects",
+    "1440: all eight previews loaded with alt/dimensions",
+    "1440: no horizontal overflow",
+    "1440: internal anchors resolve",
+    "1440: MAX clipboard",
+    "1440: visible targets min 44px high",
+    "SEO canonical / confirmed email / Person",
+    "All email links confirmed",
+    "No submission form or fake sent message",
+    "sitemap.xml: 200",
+    "Sitemap canonical",
+    "robots.txt: 200",
+    "assets/favicon.svg: 200",
+    "assets/og.jpg: 200",
+    "Unknown URL returns actual 404",
+    "404 noindex and home link",
+    "404 returns to site",
+    "Portfolio public 200 https://evsavelev.github.io/tehnologiya-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/vual-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/kinder-party-dom-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/style-dance-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/gildiya-law-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/autodoctor-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/billboard-nizhnevartovsk/",
+    "Portfolio public 200 https://evsavelev.github.io/imperiya-beauty-nizhnevartovsk/",
+    "Project opens new tab",
+    "Work → return → contact path",
+    "No JS: all content and mobile nav accessible",
+    "No JS: sticky anchor works",
+    "Clipboard denied: truthful manual fallback",
+    "Normal motion reveals content",
+    "Reduced-motion switch exposes all content",
+    "Zero unexpected console/page errors"
+  ],
+  "errors": [],
+  "external": [
+    {
+      "url": "https://evsavelev.github.io/tehnologiya-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/vual-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/kinder-party-dom-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/style-dance-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/gildiya-law-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/autodoctor-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/billboard-nizhnevartovsk/",
+      "status": 200
+    },
+    {
+      "url": "https://evsavelev.github.io/imperiya-beauty-nizhnevartovsk/",
+      "status": 200
+    }
+  ],
+  "metadata": {
+    "title": "Создание сайтов для бизнеса — Евгений Савельев",
+    "description": "Создаю лендинги, сайты компаний и каталоги: от структуры и дизайна до публикации. Посмотрите примеры работ и обсудите свой сайт напрямую с Евгением Савельевым.",
+    "canonical": "https://evsavelev.github.io/evsavelev-web/",
+    "og": "https://evsavelev.github.io/evsavelev-web/assets/og.jpg",
+    "schema": {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "@id": "https://evsavelev.github.io/evsavelev-web/#person",
+      "name": "Евгений Савельев",
+      "url": "https://evsavelev.github.io/evsavelev-web/",
+      "jobTitle": "Разработчик сайтов",
+      "description": "Создание сайтов для бизнеса: лендинги, сайты компаний и каталоги.",
+      "telephone": "+79088990088",
+      "email": "evsavelev.region@gmail.com",
+      "knowsAbout": [
+        "Создание сайтов",
+        "Веб-дизайн",
+        "Разработка лендингов"
+      ]
+    },
+    "lang": "ru"
+  },
+  "result": "PASS"
+}

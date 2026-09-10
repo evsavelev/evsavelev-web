@@ -39,7 +39,7 @@
 ## Стадии результата и дальнейшее измерение
 
 - **Implemented:** да, проверена локальная сборка и отрисовка.
-- **Deployed and observable:** ожидает публичной проверки, будет обновлено после deployment.
+- **Deployed and observable:** да, Pages run `34484814712`, attempt 2, success; публичный URL проверен 10.09.2026. `verification/public-qa.json` — 114 PASS, `verification/deployment-parity.json` — 28 файлов совпадают со сборкой, одна статическая содержательная страница и восемь полных карточек видны в HTTP-ответе. Главная/sitemap/OG/favicon/ресурсы 200; неизвестный URL 404/noindex. Лабораторный public LCP 0,812–0,900s, CLS 0, Event Timing max 80–96ms; полевой INP неизвестен.
 - **Processed by search platform:** неизвестно, доступа к Search Console нет.
 - **Outcome observed:** неизвестно, трафик/позиции/обращения не измерялись и не выдумывались.
 

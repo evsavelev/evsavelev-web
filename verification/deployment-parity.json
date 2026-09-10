@@ -1,0 +1,177 @@
+{
+  "date": "2026-09-10T13:50:20.504Z",
+  "base": "https://evsavelev.github.io/evsavelev-web/",
+  "files": [
+    {
+      "file": "404.html",
+      "status": 200,
+      "sha256": "31dc2ed8e61ac2010a5cebcbd90b77c875486e082b74763be4f68d34ba5f1712",
+      "bytes": 1005
+    },
+    {
+      "file": "app.js",
+      "status": 200,
+      "sha256": "76aa2691549a692611ecc1887a7376635bd3f7f23668c17ec9949ffbcaa3af72",
+      "bytes": 3052
+    },
+    {
+      "file": "assets/favicon.svg",
+      "status": 200,
+      "sha256": "7ceed1c675493e7fefb7a28d4c0dc362a2f7a809dc4529f81264f901fe5bf916",
+      "bytes": 205
+    },
+    {
+      "file": "assets/fonts/fonts.css",
+      "status": 200,
+      "sha256": "631b43b8c21f2182882acefcdcdde1c0e8ae2b4b69fa0991f6d939b1806b91bb",
+      "bytes": 575
+    },
+    {
+      "file": "assets/fonts/inter-cyrillic.woff2",
+      "status": 200,
+      "sha256": "71d5ee93cc1e9f1d520a3a8b66456de18c7879d8df09d57fcd2eaff75fef0075",
+      "bytes": 18748
+    },
+    {
+      "file": "assets/fonts/inter-latin.woff2",
+      "status": 200,
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "bytes": 48256
+    },
+    {
+      "file": "assets/fonts/OFL.txt",
+      "status": 200,
+      "sha256": "5b9321a4298cfeb6b34354164a1c3afc3db114569984c502b9b35d988fd58c57",
+      "bytes": 4377
+    },
+    {
+      "file": "assets/og.jpg",
+      "status": 200,
+      "sha256": "30d89bbc596ee4140473a0cbc76bd4518df803157dee2c7594e4b4cc5f934566",
+      "bytes": 53074
+    },
+    {
+      "file": "assets/portfolio/autodoctor-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "33ab44c513a6b0406db643e1ac42ddb640ec33ddbb795ebfff4eca27f2243f94",
+      "bytes": 76074
+    },
+    {
+      "file": "assets/portfolio/autodoctor-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "6a10fbe53cdc3ce8f1c275ae8c1cdd6454ffb7abfe4941e8910a403ca44b5c25",
+      "bytes": 30566
+    },
+    {
+      "file": "assets/portfolio/billboard-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "45edd76695ef8df8d113d6491821abedc13a3fee75ce74ea72c5f10503f494e9",
+      "bytes": 91912
+    },
+    {
+      "file": "assets/portfolio/billboard-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "ec706c6659b6e0b2ced35a1e5df1336250f4b7be8dd8a8ef720df5c5181321d9",
+      "bytes": 38932
+    },
+    {
+      "file": "assets/portfolio/gildiya-law-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "ee0075ca10692732c85207905d582b164fe431776530d73dc16b8784ce41872a",
+      "bytes": 105072
+    },
+    {
+      "file": "assets/portfolio/gildiya-law-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "3d62181f4d6677a44434ba07868a48ff8e6aabac64285518ee531fefd8b130ce",
+      "bytes": 36178
+    },
+    {
+      "file": "assets/portfolio/imperiya-beauty-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "32f9e3c0b43bf9c6f362d7ea49e1588eac9c0a912d89e81b09ffd418d6e19a51",
+      "bytes": 101332
+    },
+    {
+      "file": "assets/portfolio/imperiya-beauty-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "c45a22af2dca751ceb029ffb10ce5bb26a6c6fb63e5909df274a4e3cab44284e",
+      "bytes": 38088
+    },
+    {
+      "file": "assets/portfolio/kinder-party-dom-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "3586d6fdd74f7d0077250acdf87f04f071fa4e610fc71666298b323363b36df0",
+      "bytes": 114356
+    },
+    {
+      "file": "assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "4b548113bc2a779c6c72dbbce9e036063b0c0bfb6d8c9331afc49a91e14e140a",
+      "bytes": 44592
+    },
+    {
+      "file": "assets/portfolio/style-dance-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "b7c3bc4d00c77e1875517b8e6ae37f22276726d75d9fbb9ceaf03b85a95511d7",
+      "bytes": 90780
+    },
+    {
+      "file": "assets/portfolio/style-dance-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "f453e4c02744801faf33762d145ea8dac7b729cb4430ec66fb631edb0fc595df",
+      "bytes": 35238
+    },
+    {
+      "file": "assets/portfolio/tehnologiya-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "c113ffbb45d3adb98d4986a794ae187902efca5c9f0dbf2778324aa225dbfb84",
+      "bytes": 129260
+    },
+    {
+      "file": "assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "82c53c392bfc4ac1a4caa4b5068b17151674f5f6719718b263454170180cbbe9",
+      "bytes": 44954
+    },
+    {
+      "file": "assets/portfolio/vual-nizhnevartovsk-1440.webp",
+      "status": 200,
+      "sha256": "5b11dc6166aa7d79e4895a590dd758c0054cd6a275ef0eb50d9b25382c44320c",
+      "bytes": 163330
+    },
+    {
+      "file": "assets/portfolio/vual-nizhnevartovsk-720.webp",
+      "status": 200,
+      "sha256": "d3678ea71a413ff7a843aae93b861e3ab1d88135e81a4c0332ff1f9255a57e60",
+      "bytes": 57932
+    },
+    {
+      "file": "index.html",
+      "status": 200,
+      "sha256": "d58e1b40694af54469cfcb7224378de423d7d655b4c8d33a8bf3cbeb1c39c4d3",
+      "bytes": 27057
+    },
+    {
+      "file": "robots.txt",
+      "status": 200,
+      "sha256": "ef146fae9cc8e99b9c5ec48bb6e452bad6ec524f5497cc04b896c38d6466fc76",
+      "bytes": 87
+    },
+    {
+      "file": "sitemap.xml",
+      "status": 200,
+      "sha256": "541c674faceb69634b7f7e7f29d3b52883c7cb8260bcb9d0d92773e06f5845e0",
+      "bytes": 173
+    },
+    {
+      "file": "styles.css",
+      "status": 200,
+      "sha256": "75b17b88ec71d37caad8aee2d8082a00debd2eda312e5174e5964eabfa56e2db",
+      "bytes": 12427
+    }
+  ],
+  "rootRobotsStatus": 404,
+  "staticContent": "One H1, eight full portfolio articles before JS",
+  "result": "PASS"
+}
