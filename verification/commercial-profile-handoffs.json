@@ -1,0 +1,30 @@
+[
+  {
+    "base": "http://127.0.0.1:4190/evsavelev-web/",
+    "channel": "telegram",
+    "profile": "https://t.me/+79088990088?profile",
+    "clipboard": "Native Chrome Clipboard API matches prepared text",
+    "scope": "Navigation only; no message sent; external profile availability not asserted"
+  },
+  {
+    "base": "http://127.0.0.1:4190/evsavelev-web/",
+    "channel": "max",
+    "profile": "https://max.ru/u/f9LHodD0cOI3lG2rCNUhXaH2sHDji6eki00A8hQZEJLe7xK2dwy4zaDRH88",
+    "clipboard": "Native Chrome Clipboard API matches prepared text",
+    "scope": "Navigation only; no message sent; external profile availability not asserted"
+  },
+  {
+    "base": "https://evsavelev.github.io/evsavelev-web/",
+    "channel": "telegram",
+    "profile": "https://t.me/+79088990088?profile",
+    "clipboard": "Native Chrome Clipboard API matches prepared text",
+    "scope": "Navigation only; no message sent; external profile availability not asserted"
+  },
+  {
+    "base": "https://evsavelev.github.io/evsavelev-web/",
+    "channel": "max",
+    "profile": "https://max.ru/u/f9LHodD0cOI3lG2rCNUhXaH2sHDji6eki00A8hQZEJLe7xK2dwy4zaDRH88",
+    "clipboard": "Native Chrome Clipboard API matches prepared text",
+    "scope": "Navigation only; no message sent; external profile availability not asserted"
+  }
+]

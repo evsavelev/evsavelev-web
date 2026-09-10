@@ -1,0 +1,309 @@
+{
+  "base": "https://evsavelev.github.io/evsavelev-web/",
+  "date": "2026-09-10T15:18:11.581Z",
+  "environment": "Chrome / Windows, 390×844 DPR1 touch, cold cache, 4× CPU, 80ms latency, 200KiB/s down, 100KiB/s up",
+  "scope": "Lab only. Event Timing interaction durations are diagnostic samples, not field INP. CLS is sum of observed non-input shifts in this short session.",
+  "runs": [
+    {
+      "run": 1,
+      "lcp": 916,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "pointerdown",
+          "duration": 136,
+          "id": 8025
+        },
+        {
+          "name": "pointerup",
+          "duration": 136,
+          "id": 8025
+        },
+        {
+          "name": "click",
+          "duration": 136,
+          "id": 8025
+        },
+        {
+          "name": "click",
+          "duration": 72,
+          "id": 8032
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 8039
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 8039
+        },
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 8039
+        },
+        {
+          "name": "click",
+          "duration": 192,
+          "id": 8046
+        }
+      ],
+      "longTasks": [
+        434,
+        265,
+        98,
+        60,
+        142
+      ],
+      "resourceBytes": 491142,
+      "maxObservedInteractionMs": 192,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 4887,
+            "encoded": 4587
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1726,
+            "encoded": 1426
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/request.js",
+            "bytes": 2589,
+            "encoded": 2289
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 10354
+      }
+    },
+    {
+      "run": 2,
+      "lcp": 1004,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "pointerdown",
+          "duration": 192,
+          "id": 3301
+        },
+        {
+          "name": "pointerup",
+          "duration": 192,
+          "id": 3301
+        },
+        {
+          "name": "click",
+          "duration": 192,
+          "id": 3301
+        },
+        {
+          "name": "click",
+          "duration": 80,
+          "id": 3308
+        },
+        {
+          "name": "pointerdown",
+          "duration": 24,
+          "id": 3315
+        },
+        {
+          "name": "pointerup",
+          "duration": 24,
+          "id": 3315
+        },
+        {
+          "name": "click",
+          "duration": 120,
+          "id": 3315
+        },
+        {
+          "name": "click",
+          "duration": 192,
+          "id": 3322
+        }
+      ],
+      "longTasks": [
+        448,
+        224,
+        110,
+        71,
+        153
+      ],
+      "resourceBytes": 491142,
+      "maxObservedInteractionMs": 192,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 4887,
+            "encoded": 4587
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1726,
+            "encoded": 1426
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/request.js",
+            "bytes": 2589,
+            "encoded": 2289
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 10354
+      }
+    },
+    {
+      "run": 3,
+      "lcp": 908,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 2608
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 2608
+        },
+        {
+          "name": "click",
+          "duration": 120,
+          "id": 2608
+        },
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 2615
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 2622
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 2622
+        },
+        {
+          "name": "click",
+          "duration": 104,
+          "id": 2622
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 2629
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 2629
+        },
+        {
+          "name": "click",
+          "duration": 192,
+          "id": 2629
+        }
+      ],
+      "longTasks": [
+        421,
+        258,
+        85,
+        59,
+        149
+      ],
+      "resourceBytes": 491142,
+      "maxObservedInteractionMs": 192,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 4887,
+            "encoded": 4587
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1726,
+            "encoded": 1426
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/request.js",
+            "bytes": 2589,
+            "encoded": 2289
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 10354
+      }
+    }
+  ]
+}
