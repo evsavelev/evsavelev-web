@@ -1,0 +1,23 @@
+{
+  "url": "http://127.0.0.1:4193/evsavelev-web/",
+  "results": [
+    {
+      "width": 360,
+      "passed": true
+    },
+    {
+      "width": 390,
+      "passed": true
+    },
+    {
+      "width": 430,
+      "passed": true
+    },
+    {
+      "width": 1440,
+      "passed": true
+    }
+  ],
+  "noJS": true,
+  "unrelatedMarkupUnchanged": true
+}

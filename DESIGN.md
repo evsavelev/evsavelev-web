@@ -76,3 +76,12 @@ Desktop: фото до 400px шириной, текст до 650px; tablet: дв
 - 768–1023px: 2-column портфолио, упрощённый header, уменьшенный display; нет тесной desktop-навигации.
 - ≤767px: меню кнопкой, одна колонка работ, услуги/шаги вертикально, sticky contact CTA, safe-area.
 - QA: 360/390/430/768/1024/1440, меню/якоря/внешние ссылки/диалог/MAX copy/reduce/no-JS, нет overflow, изображения загружены, все тексты читаются. Визуальный redteam против этого lock, SEO-audit и публичный QA обязательны до сдачи.
+
+
+## Pricing accordion - 2026-09-10
+
+Reference lock: existing site and Dash Digital Studio, verified through refero-free (catalog available). Existing research compares Dash, 14islands and Websmith; retain the selected Dash direction. Preserve Inter, #f0f0f0 canvas, #2a2a2a ink, #d6d6d6 rules and existing pill buttons. No new imagery or surfaces.
+
+Five native details/summary rows, closed by default, sharing a name for exclusive opening. Summary: number, title, short description, plus; price only in the disclosure. Desktop grid: 60px / 1fr / 1fr / 28px with 24px gaps. Mobile: 24px / minmax(0,1fr) / 24px, description below title. Padding 24/20px; title 28/23px; body 16/15px. Three concise facts and contact anchor CTA inside. Visible focus, no animation, no modal, no horizontal scrolling.
+
+User brief governs content, five prices and shared launch note. Preserve #prices as an anchor within #services. Remove the old pricing section; preserve the free demo teaser and every unrelated section. QA: 360/390/430/1440, keyboard, pointer, hidden prices, single opening, no-JS and unchanged unrelated markup.
