@@ -1,0 +1,350 @@
+{
+  "base": "http://127.0.0.1:4190/evsavelev-web/",
+  "date": "2026-09-10T13:41:52.242Z",
+  "environment": "Chrome / Windows, 390×844 DPR1 touch, cold cache, 4× CPU, 80ms latency, 200KiB/s down, 100KiB/s up",
+  "scope": "Lab only. Event Timing interaction durations are diagnostic samples, not field INP. CLS is sum of observed non-input shifts in this short session.",
+  "runs": [
+    {
+      "run": 1,
+      "lcp": 752,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 8475
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 8482
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 8482
+        },
+        {
+          "name": "click",
+          "duration": 40,
+          "id": 8482
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 8489
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 8489
+        },
+        {
+          "name": "click",
+          "duration": 72,
+          "id": 8489
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 8496
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 8496
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 8496
+        }
+      ],
+      "longTasks": [
+        89,
+        50
+      ],
+      "resourceBytes": 414463,
+      "maxObservedInteractionMs": 88,
+      "initial": {
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 890,
+            "encoded": 590
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/styles.css",
+            "bytes": 12727,
+            "encoded": 12427
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/app.js",
+            "bytes": 3352,
+            "encoded": 3052
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 27357
+      }
+    },
+    {
+      "run": 2,
+      "lcp": 808,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 7981
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 7988
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 7988
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 7988
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 7995
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 7995
+        },
+        {
+          "name": "click",
+          "duration": 72,
+          "id": 7995
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 8002
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 8002
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 8002
+        }
+      ],
+      "longTasks": [
+        114,
+        59
+      ],
+      "resourceBytes": 414463,
+      "maxObservedInteractionMs": 88,
+      "initial": {
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 890,
+            "encoded": 590
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/styles.css",
+            "bytes": 12727,
+            "encoded": 12427
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/app.js",
+            "bytes": 3352,
+            "encoded": 3052
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 27357
+      }
+    },
+    {
+      "run": 3,
+      "lcp": 820,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 3514
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 3521
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 3521
+        },
+        {
+          "name": "click",
+          "duration": 40,
+          "id": 3521
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 3528
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 3528
+        },
+        {
+          "name": "click",
+          "duration": 64,
+          "id": 3528
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 3535
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 3535
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 3535
+        }
+      ],
+      "longTasks": [
+        111,
+        54
+      ],
+      "resourceBytes": 414463,
+      "maxObservedInteractionMs": 88,
+      "initial": {
+        "resources": [
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 890,
+            "encoded": 590
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/styles.css",
+            "bytes": 12727,
+            "encoded": 12427
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/app.js",
+            "bytes": 3352,
+            "encoded": 3052
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "http://127.0.0.1:4190/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 27357
+      }
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+[
+  {
+    "file": "assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 44954,
+    "source": "https://evsavelev.github.io/tehnologiya-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/tehnologiya-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 129260,
+    "source": "https://evsavelev.github.io/tehnologiya-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/vual-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 57932,
+    "source": "https://evsavelev.github.io/vual-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/vual-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 163330,
+    "source": "https://evsavelev.github.io/vual-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 44592,
+    "source": "https://evsavelev.github.io/kinder-party-dom-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/kinder-party-dom-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 114356,
+    "source": "https://evsavelev.github.io/kinder-party-dom-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/style-dance-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 35238,
+    "source": "https://evsavelev.github.io/style-dance-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/style-dance-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 90780,
+    "source": "https://evsavelev.github.io/style-dance-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/gildiya-law-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 36178,
+    "source": "https://evsavelev.github.io/gildiya-law-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/gildiya-law-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 105072,
+    "source": "https://evsavelev.github.io/gildiya-law-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/autodoctor-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 30566,
+    "source": "https://evsavelev.github.io/autodoctor-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/autodoctor-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 76074,
+    "source": "https://evsavelev.github.io/autodoctor-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/billboard-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 38932,
+    "source": "https://evsavelev.github.io/billboard-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/billboard-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 91912,
+    "source": "https://evsavelev.github.io/billboard-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/imperiya-beauty-nizhnevartovsk-720.webp",
+    "width": 720,
+    "height": 500,
+    "bytes": 38088,
+    "source": "https://evsavelev.github.io/imperiya-beauty-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  },
+  {
+    "file": "assets/portfolio/imperiya-beauty-nizhnevartovsk-1440.webp",
+    "width": 1440,
+    "height": 1000,
+    "bytes": 101332,
+    "source": "https://evsavelev.github.io/imperiya-beauty-nizhnevartovsk/",
+    "captured": "2026-09-10",
+    "method": "Playwright 1440x1000 viewport, original page, resized/encoded WebP only"
+  }
+]

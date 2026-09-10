@@ -1,0 +1,12 @@
+{
+  "name": "evsavelev-web",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Личный сайт-портфолио Евгения Савельева",
+  "scripts": {
+    "build": "node scripts/build.cjs",
+    "start": "node scripts/serve.cjs",
+    "qa": "node scripts/qa.cjs"
+  },
+  "devDependencies": { "@playwright/test": "1.58.2" }
+}

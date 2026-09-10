@@ -1,4 +1,4 @@
-const {chromium}=require('../../tehnologiya-nizhnevartovsk/node_modules/@playwright/test');
+const {chromium}=require('@playwright/test');
 const fs=require('node:fs');
 const names=['tehnologiya-nizhnevartovsk','vual-nizhnevartovsk','kinder-party-dom-nizhnevartovsk','style-dance-nizhnevartovsk','gildiya-law-nizhnevartovsk','autodoctor-nizhnevartovsk','billboard-nizhnevartovsk','imperiya-beauty-nizhnevartovsk','volodya-remont-nizhnevartovsk','delovoy-nizhnevartovsk','international-business-settlements'];
 (async()=>{fs.mkdirSync('qa/source-sites',{recursive:true});const browser=await chromium.launch({channel:'chrome'});const report=[];

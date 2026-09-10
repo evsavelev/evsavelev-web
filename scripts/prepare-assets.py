@@ -14,7 +14,7 @@ for name in names:
 (root/'data').mkdir(exist_ok=True)
 (root/'data/media.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2),encoding='utf-8')
 fonts=root/'assets/fonts';fonts.mkdir(exist_ok=True)
-css=requests.get('https://fonts.googleapis.com/css2?family=Inter:wght@300..500&display=swap',headers={'User-Agent':'Mozilla/5.0'},timeout=30);css.raise_for_status()
+css=requests.get('https://fonts.googleapis.com/css2?family=Inter:wght@300..500&display=swap',headers={'User-Agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/131.0.0.0 Safari/537.36'},timeout=30);css.raise_for_status()
 blocks=re.findall(r'/\* (.*?) \*/\s*(@font-face\s*\{.*?\})',css.text,re.S)
 local=[]
 for subset,block in blocks:
