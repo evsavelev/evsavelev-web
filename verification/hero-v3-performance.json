@@ -1,0 +1,22 @@
+[
+  "360: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  "390: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  "loop observed at end of 13.5s video",
+  "keyboard Pause works",
+  "430: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  "768: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  "1024: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  "1440: text/CTA available while MP4 blocked; media load produces zero CLS and identical bounds",
+  {
+    "baselineWithoutHeroVideoShifts": [
+      {
+        "value": 0.0005446765571832657,
+        "nodes": [
+          "button button-outline",
+          "",
+          ""
+        ]
+      }
+    ]
+  }
+]
