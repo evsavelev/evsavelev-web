@@ -23,7 +23,7 @@
     dialog.addEventListener('close', () => {document.body.classList.remove('dialog-open');if(dialog.returnFocus?.isConnected)dialog.returnFocus.focus({preventScroll:true});});
     dialog.addEventListener('keydown', event => {
       if(event.key !== 'Tab') return;
-      const items=[...dialog.querySelectorAll('a[href],button:not([disabled])')].filter(el=>el.getClientRects().length);
+      const items=[...dialog.querySelectorAll('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled])')].filter(el=>el.getClientRects().length);
       const first=items[0],last=items[items.length-1];
       if(event.shiftKey && document.activeElement===first){event.preventDefault();last.focus();}
       else if(!event.shiftKey && document.activeElement===last){event.preventDefault();first.focus();}
@@ -34,7 +34,7 @@
   if (typeof document.querySelector('#menu-dialog').showModal === 'function') {
     menuButton.hidden = false;
     menuButton.addEventListener('click',()=>open(document.querySelector('#menu-dialog'),menuButton));
-    document.querySelector('[data-contact-open]').addEventListener('click',event=>{if(window.matchMedia('(max-width: 767px)').matches && open(document.querySelector('#contact-dialog'),event.currentTarget))event.preventDefault();});
+    document.querySelector('[data-contact-open]')?.addEventListener('click',event=>{if(window.matchMedia('(max-width: 767px)').matches && open(document.querySelector('#contact-dialog'),event.currentTarget))event.preventDefault();});
   }
   const reduced=window.matchMedia('(prefers-reduced-motion: reduce)');
   if('IntersectionObserver' in window && !reduced.matches){
