@@ -1,0 +1,328 @@
+{
+  "base": "https://evsavelev.github.io/evsavelev-web/",
+  "date": "2026-09-10T14:06:06.866Z",
+  "environment": "Chrome / Windows, 390×844 DPR1 touch, cold cache, 4× CPU, 80ms latency, 200KiB/s down, 100KiB/s up",
+  "scope": "Lab only. Event Timing interaction durations are diagnostic samples, not field INP. CLS is sum of observed non-input shifts in this short session.",
+  "runs": [
+    {
+      "run": 1,
+      "lcp": 1176,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 88,
+          "id": 9309
+        },
+        {
+          "name": "click",
+          "duration": 40,
+          "id": 9316
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 9323
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 9323
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 9323
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 9330
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 9330
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 9330
+        }
+      ],
+      "longTasks": [
+        194,
+        56
+      ],
+      "resourceBytes": 417356,
+      "maxObservedInteractionMs": 88,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 3773,
+            "encoded": 3473
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1499,
+            "encoded": 1199
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 6334
+      }
+    },
+    {
+      "run": 2,
+      "lcp": 892,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 72,
+          "id": 562
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 569
+        },
+        {
+          "name": "click",
+          "duration": 40,
+          "id": 569
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 576
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 576
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 576
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 583
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 583
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 583
+        }
+      ],
+      "longTasks": [
+        125
+      ],
+      "resourceBytes": 417356,
+      "maxObservedInteractionMs": 72,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 3773,
+            "encoded": 3473
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1499,
+            "encoded": 1199
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 6334
+      }
+    },
+    {
+      "run": 3,
+      "lcp": 844,
+      "lcpElement": "H1",
+      "cls": 0,
+      "events": [
+        {
+          "name": "click",
+          "duration": 72,
+          "id": 9462
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 9469
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 9469
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 9469
+        },
+        {
+          "name": "pointerdown",
+          "duration": 16,
+          "id": 9476
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 9476
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 9476
+        },
+        {
+          "name": "pointerup",
+          "duration": 16,
+          "id": 9483
+        },
+        {
+          "name": "click",
+          "duration": 56,
+          "id": 9483
+        }
+      ],
+      "longTasks": [
+        130
+      ],
+      "resourceBytes": 417356,
+      "maxObservedInteractionMs": 72,
+      "initial": {
+        "resources": [
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-cyrillic.woff2",
+            "bytes": 19048,
+            "encoded": 18748
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/fonts.css",
+            "bytes": 570,
+            "encoded": 270
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/styles.css",
+            "bytes": 3773,
+            "encoded": 3473
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/app.js",
+            "bytes": 1499,
+            "encoded": 1199
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/fonts/inter-latin.woff2",
+            "bytes": 48556,
+            "encoded": 48256
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/tehnologiya-nizhnevartovsk-720.webp",
+            "bytes": 45254,
+            "encoded": 44954
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/vual-nizhnevartovsk-720.webp",
+            "bytes": 58232,
+            "encoded": 57932
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/portfolio/kinder-party-dom-nizhnevartovsk-720.webp",
+            "bytes": 44892,
+            "encoded": 44592
+          },
+          {
+            "name": "https://evsavelev.github.io/evsavelev-web/assets/favicon.svg",
+            "bytes": 505,
+            "encoded": 205
+          }
+        ],
+        "document": 6334
+      }
+    }
+  ]
+}
