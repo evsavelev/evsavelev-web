@@ -1,93 +1,35 @@
-# Евгений Савельев — дизайн сайта-портфолио
+# Digital Build — visual direction, September 2026
 
-## Демо, стоимость и статическая заявка
+## Reference lock
 
-Дополнение владельца: сохраняется reference lock Dash Digital и текущая палитра/типографика. Бесплатное демо — предварительная концепция, 0 ₽ без договора/предоплаты/обязательств. Hero H1 и работы сохранены; второй CTA открывает форму демо. Компактный тизер следует после hero, перед портфолио.
+Research considered three directions: [Linear](https://linear.app/) — product interfaces and controlled hierarchy; [Vercel](https://vercel.com/) — structural grids and transitions between light and dark surfaces; [Framer](https://www.framer.com/) — visual-first creative presentation. Refero search and catalog refresh timed out in this session; direct official pages and the refero-design craft references were used as fallback. No catalog results are claimed.
 
-Цены — #prices после услуг. Один широкий тёмный блок персонального демо (инверсия существующих ink/canvas по прямому брифу), затем пять платных проектов в горизонтальных строках с названием, стартовой ценой, объяснением и CTA. Это продолжение service rows, не сетка SaaS-тарифов. Desktop: номер/название/описание/цена и CTA; mobile: вертикальный ритм, цена сразу после названия. Все платные цены «от», без выдуманных сроков, скидок и цен продления.
+Primary direction: a light, precise digital studio, closest to the structural Vercel direction. The supplied film is the primary visual evidence. Keep existing Inter typography and personal, direct tone. Do not combine unrelated reference brand treatments.
 
-Далее scope «В стоимость уже входит запуск сайта», заметные 12 месяцев хостинга, факторы стоимости и FAQ на native details. Домен оформляется на клиента и оплачивается регистратору отдельно; после года хостинг оплачивается отдельно без неутверждённой цены.
+## Layout and hierarchy
 
-Единая форма в существующей системе sheet/dialog, до 620px шириной, max-height 100dvh минус поля, внутренний scroll; поля 16px, min-height 48px. Имя/телефон required, select и необязательный комментарий. Отправка только явным выбором одного из четырёх каналов: подготовка текста, без backend/storage/fetch. Inline-ошибки, фокус на первом ошибочном поле, Escape/close/focus return, Tab включает поля. Текст всегда доступен для проверки/ручного копирования при проблемах clipboard или popup. Новая постоянная fixed-панель не создаётся.
+Header → wide 16:9 film → supplied four-line offer → supporting copy → two CTAs → phone and three messengers. Existing container remains; no text overlays on film. Video has reserved dimensions before loading. Hero offer uses a deliberate left alignment and a narrower reading measure. Demo receives a compact tinted surface; portfolio and native five-item pricing stay light. The existing approach section becomes the single graphite section. About, portrait and contacts remain calm.
 
-## Уточнение портфолио
+Spacing: 8px base, 16/24/32px internal gaps, 64–112px section rhythm. Existing desktop container and 20px mobile gutters. Film fills available width without cropping its center. On 360/390/430px, four H1 lines remain deliberate, buttons stack, contacts wrap, decorative fragments simplify.
 
-Сохраняется существующая визуальная система. По прямому заданию владельца добавляются №01 «Международные расчёты для бизнеса» и №02 Bitok Consulting; прежние восемь работ идут далее без перестановок. Превью — актуальные браузерные снимки 1440×1000, WebP 720/1440.
+## Tokens
 
-При JS обычная загрузка закрывает сетку без пустого резерва; видны заголовок, тизер и один toggle. Hero открывает все работы за один клик и переносит фокус к заголовку. Верхний toggle меняется на «Скрыть работы»; закрытие из верхней точки сохраняет фокус и позицию без прыжка из конца длинной сетки. Прямой #work и пункты навигации раскрывают работы. aria-controls/expanded, hidden, нативные button, reduced-motion. Без JS — открытые карточки и обычный якорь; все материалы есть в исходном HTML. Фото, контакты, MAX и исправление mobile CTA не изменяются.
+Background #F5F5F2; surface #FFFFFF; ink/dark #17191D; secondary #60646C; line #D9DCE2; primary #326BFF; cyan #45C7F2; violet #7357FF; accent surface #E9EFFF. Gradient limited to the quiet ambient light around the film. Text never relies on cyan/violet for contrast.
 
-## Точечная UX-корректировка: мобильные контакты
+Typography: existing locally hosted Inter; H1 76px desktop, fluid 33–40px mobile; existing section heading hierarchy. Body 16–18px with 1.5–1.65 leading. Eyebrows are small, readable, not decorative code labels.
 
-По результату проверки владельцем на настоящем телефоне постоянная fixed bottom `.mobile-bar` удалена. У footer остаётся обычный нижний отступ 24px + safe-area, без резерва под панель. Существующая hero CTA «Обсудить сайт» на телефоне открывает сохранённый диалог, на desktop и без JS ведёт к контактам. Пункт «Контакты» в меню и основной контактный блок сохранены. MAX — предоставленная владельцем прямая ссылка рядом с WhatsApp/Telegram и в диалоге; инструкции поиска и копирование удалены. Это уточнение заменяет прежние указания о sticky-панели и MAX fallback; остальные решения не меняются.
+Buttons retain familiar rounded shape: blue filled primary, transparent outlined secondary, 44px minimum touch target. Hover arrow moves 3px; clear focus rings. Native tariff rows keep content and disclosure semantics; open row gains pale blue and a blue leading rule. No new card grid.
 
-Дата: 10.09.2026. Цель — коммерческий сайт независимого исполнителя для владельцев бизнеса. Главная конверсия: открыть работы → выбрать прямой способ связи. Без цен, отзывов, сроков, стажа, агентства и вымышленных результатов.
+Contrast adjustment: the exact primary with white small text measures 4.485:1. A 1.18% black overlay on filled buttons brings contrast above 4.5:1 while retaining the primary token. Small links on tinted backgrounds use graphite; blue remains in rules and arrows.
 
-## Исследование Refero
+## Digital build grid / motion
 
-Исследованы три направления через доступный refero-free. Каталог отвечает, refresh не требовался. Полные системы просмотрены до реализации.
+A thin CSS grid and small browser-wireframe SVG sit behind and beside the film, noninteractive and aria-hidden. One small structural rule with a blue endpoint repeats at the process heading. Decorative geometry stays within the container and never covers controls or text. No WebGL/canvas, new library, fabricated screenshot or generated image.
 
-| Источник | Направление | Решение |
-|---|---|---|
-| [Dash Digital](https://dashdigital.studio), `6036b661-3886-4f76-a5e6-bb8960eb7db5` | Сдержанная цифровая студия: светло-серый фон, лёгкий крупный гротеск, две крупные работы в ряд, чёрные pill CTA | Единственная основная визуальная система. Сохранить нейтральность, плоские превью, масштаб и ритм |
-| [14islands](https://14islands.com), `139c4bee-396d-494c-baf0-fe211bf4928d` | Контрастная галерея с огромным display и текстовыми CTA | Подтверждает важность крупных изображений. Не переносим 180px type, serif-подстановку, text-only CTA и тёмный footer |
-| [Websmith](https://websmith.studio), `11cfc460-807b-42c5-b10a-7b042c60f3e8` | Независимая web-студия: типографический hero, cream и пастельные услуги | Релевантен по аудитории, но отклонён: пастельные карточки, testimonials и status-dot не соответствуют брифу |
+Existing scroll reveals use 14px / 440ms; project hover scale 1.02; tariff content enters over 300ms. No perpetual decorative animation. Reduced-motion disables transitions, transforms and entrance animation; video stays poster-only until manual play. Film keeps its existing lazy source, muted autoplay, loop, playsinline, visibility pause and manual-pause persistence. Dark translucent Pause/Play has an accessible Russian label and a 44px target.
 
-Reference lock: Dash Digital + содержание задания. Не усреднять источники и не переносить цвет/радиусы/шрифты альтернатив. Типографические и доступностные адаптации ниже явно заданы для русского коммерческого текста.
+## Preservation and QA gate
 
-## Токены
+Preserve all portfolio and tariff data, free-demo terms, forms, contacts, portrait, metadata, schema, canonical and publication pipeline. Only hero copy changes to the supplied final text. No added marketing claims. No huge shadows, full-page gradients or tiny decorative labels.
 
-- Canvas/background: `#f0f0f0`. Основной текст и CTA: `#2a2a2a`. White-on-CTA: `#fafafa`. Вторичные поверхности при необходимости: `#fafafa`; линии `#d6d6d6`. Chromatic accent отсутствует.
-- Текст не ослабляется до нечитаемого светлого серого. Превью полноцветные, без tint/blur/градиентов. Shadows, glass, glow отсутствуют.
-- Шрифт: один нейтральный гротеск Inter (разрешённый substitute Dash), локальные variable WOFF2 latin/cyrillic с OFL; fallback Arial. H1/H2 weight 300, UI/body 400/500. Никаких отдельных декоративных слов/serif.
-- H1: 96px desktop / 74px tablet / 46px mobile, line-height 1.02, tracking −.055em. Размер служит ясному короткому офферу, без бессмысленного гигантизма.
-- H2: 64/52/36px, line-height 1.07, tracking −.04em. H3: 28/25px, line-height 1.18. Body: 17–18px/1.55; UI 14–16px; captions ≥12px. Source line-height .8 для русского running text отклонён по читаемости.
-- Контейнер: 1320px, боковые поля 48px desktop / 28px tablet / 20px mobile. Spacing: 8/12/16/24/32/48/64/96/120px. Основные разделы 100–120px desktop, 64–80px mobile.
-- Кнопки: 999px radius, минимум 52px, padding 16px 24px, основной #2a2a2a/#fafafa. Вторичные outlined pill, отдельные inline links с подчёркиванием при focus/hover. Микро-кнопки источника увеличены для touch.
-
-## Композиция
-
-Header: слева имя в две строки, по центру Work/Services/Process, справа «Обсудить сайт». Никакого вымышленного «доступен сейчас» или агентского логотипа.
-
-Hero: «Сайты для бизнеса. От идеи до публикации.» — короткий typographic блок. Подзаголовок объясняет диапазон работ, рядом две CTA. Ниже без промежуточных преимуществ начинается портфолио. Первый экран не зависит от тяжёлого видео.
-
-Портфолио — главный раздел, 8 проектов, два больших превью в строке desktop, один mobile. Первая пара: «Технология» и «Вуаль». Каждый имеет исходный screenshot, название, нишу, краткую задачу, 2–4 выполненных пункта, «Открыть сайт» в новой вкладке. Фото-карточки flat/0 radius; 29–32px gap. Нижние ссылки выравниваются внутри ряда. Никакой ложной статистики, оплаты или утверждения принятия клиентом. Небольшое честное пояснение: самостоятельные демонстрационные проекты, открытые для просмотра.
-
-Далее услуги в пяти нумерованных строках (не ещё одна сетка карточек), блок доверия через результат, пять шагов процесса, короткое «Обо мне» без непроверенного портрета, крупный финальный контактный блок. Не создавать пустых разделов или скрытого back-end.
-
-Контакты: телефон/WhatsApp/Telegram/email, MAX только копирует номер и объясняет поиск. Пользователь подтвердил email `evsavelev.region@gmail.com`. Основные CTA ведут к контактам; на телефоне одна sticky «Связаться» раскрывает компактный native dialog с теми же каналами. Без JS — обычный якорь. Panel safe-area и нижний запас, не закрывать footer. Диалог закрывается Escape/кнопкой, сохраняет фокус.
-
-## Motion и доступность
-
-IntersectionObserver ниже первого экрана, opacity + translateY 14px/440ms один раз, максимум две карточки с задержкой 60ms. Не скрывать hero или интерактивные контакты. Hover screenshot ≤1.02/220ms, CTA arrow 2px/150ms. Reduced-motion: полностью видимый контент, нет transform или smooth scroll. Нет JS: весь текст, ссылки и портфолио доступны.
-
-Focus-visible 3px #2a2a2a с 5px offset; на тёмных элементах outline снаружи. Touch ≥44px. Все картинки width/height, srcset, WebP, lazy ниже первого экрана. Hero — текст, локальные шрифты font-display:swap.
-
-## Адаптация и gate
-
-### Дополнение: подтверждённый портрет, 10.09.2026
-
-Источник — приложенный пользователем `ChatGPT Image 10 сент. 2026 г., 18_31_57.png`, уже обработанное изображение. Направление Dash, палитра, типографика, портфолио и контакты сохраняются. Новая композиция следует прямому брифу: в «Обо мне» слева плоский вертикальный портрет около 4:5, справа имя, позиционирование, два коротких абзаца и одна CTA «Рассказать о задаче». Без рамок, эффектов, изменения лица/костюма и биографических достижений.
-
-Desktop: фото до 400px шириной, текст до 650px; tablet: две колонки с достаточным промежутком; mobile: фото до 280px шириной, далее текст и CTA, обычный поток без зависимости от анимации. Сохраняется полный исходный кадр, включая макушку, подбородок, плечи и бабочку. WebP 480/720/960, размеры и srcset, lazy ниже первого экрана. Оригинал сохранён отдельно от публикуемых ресурсов.
-
-Перед выбором сравнить браузерные снимки A (тот же портрет справа от оффера, обычная eager-загрузка) и B (текущий typographic hero, портрет только в «Обо мне»). Это локальное сравнение одной страницы, без отдельной версии сайта. Решение определяется ясностью оффера, заметностью CTA/работ и риском ассоциации с коучем/консультантом; результат фиксируется в `PORTRAIT-REVIEW.md`.
-
-- ≥1024px: 2-column портфолио, широкий типографический hero, трёхзонный header.
-- 768–1023px: 2-column портфолио, упрощённый header, уменьшенный display; нет тесной desktop-навигации.
-- ≤767px: меню кнопкой, одна колонка работ, услуги/шаги вертикально, sticky contact CTA, safe-area.
-- QA: 360/390/430/768/1024/1440, меню/якоря/внешние ссылки/диалог/MAX copy/reduce/no-JS, нет overflow, изображения загружены, все тексты читаются. Визуальный redteam против этого lock, SEO-audit и публичный QA обязательны до сдачи.
-
-
-## Pricing accordion - 2026-09-10
-
-Reference lock: existing site and Dash Digital Studio, verified through refero-free (catalog available). Existing research compares Dash, 14islands and Websmith; retain the selected Dash direction. Preserve Inter, #f0f0f0 canvas, #2a2a2a ink, #d6d6d6 rules and existing pill buttons. No new imagery or surfaces.
-
-Five native details/summary rows, closed by default, sharing a name for exclusive opening. Summary: number, title, short description, plus; price only in the disclosure. Desktop grid: 60px / 1fr / 1fr / 28px with 24px gaps. Mobile: 24px / minmax(0,1fr) / 24px, description below title. Padding 24/20px; title 28/23px; body 16/15px. Three concise facts and contact anchor CTA inside. Visible focus, no animation, no modal, no horizontal scrolling.
-
-User brief governs content, five prices and shared launch note. Preserve #prices as an anchor within #services. Remove the old pricing section; preserve the free demo teaser and every unrelated section. QA: 360/390/430/1440, keyboard, pointer, hidden prices, single opening, no-JS and unchanged unrelated markup.
-
-## Hero video V3 — 2026-09-11
-
-Reference lock: existing production site / Dash direction. This is a scoped media insertion, not a redesign. Refero catalog is available; compared Dul Zorigoo (flat unframed media), Nathan Riley (dark gallery), Getburnt (warm editorial). Retain existing Dash canvas, typography and layout; borrow only the unframed media treatment from Dul Zorigoo. Reject dark gallery backgrounds, new serif fonts, colors and decorative surfaces.
-
-Place the supplied 1280×720 MP4 after hero actions and direct contacts, inside .hero.wrap, before the existing demo teaser. No additional heading or copy. Preserve all existing sections verbatim. Width 100%, aspect ratio 16:9, object-fit cover, zero border/radius/shadow. Gap 32px desktop / 24px mobile. Existing container and responsive gutters govern 360–1440px. Small bottom-right Play/Pause pill uses existing canvas/ink, inherited font, 44px touch target and visible focus. Poster reserves the exact video geometry before loading. No generation, master or WebM. Deferred source attachment near viewport; reduced motion stays on poster until manual Play; manual Pause persists across scroll. Pause far outside viewport and in hidden tabs.
+Inspect 360×800, 390×844, 430×932, 768×1024, 1024×900 and 1440×900; verify four-line H1, order, overflow, focus, forms, all five tariffs, portfolio, video states, reduced motion, poster, delayed-video layout stability, console and production asset loading. Compare screenshots to this reference lock before release.

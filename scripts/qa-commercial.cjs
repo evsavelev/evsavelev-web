@@ -11,7 +11,7 @@ for(const [width,height] of [[360,800],[390,844],[430,932],[768,1024],[1440,900]
  await p.route('**/request.js',async route=>{const response=await route.fetch(),source=await response.text();assert.ok(source.includes('window.location.href='));assert.ok(!/fetch\(|localStorage|sessionStorage|indexedDB/.test(source));await route.fulfill({response,body:source.replace('window.location.href=','window.__mail=')});});
  await p.goto(base,{waitUntil:'networkidle'});
  await p.evaluate(()=>{window.handoffs=[];window.clipboardText='';window.copyDenied=false;window.popupBlocked=false;window.open=(url)=>{window.handoffs.push(url);return window.popupBlocked?null:{opener:null,closed:false,location:{replace(url){window.handoffs.push(url)}},close(){}}};Object.defineProperty(navigator,'clipboard',{configurable:true,value:{writeText:async text=>{if(window.copyDenied)throw Error('Denied');window.clipboardText=text}}});});
- check(`${width}: six prices`,await p.locator('.price-project').count()===6);
+ check(`${width}: five tariff accordions`,await p.locator('.tariff').count()===5);
  await p.screenshot({path:`${dir}/hero-${width}.png`});
  for(const section of ['#prices','.included','.commercial-faq']){await p.locator(section).scrollIntoViewIfNeeded();await p.screenshot({path:`${dir}/${section.replace(/[#.]/g,'')}-${width}.png`});}
  const buttons=p.locator('[data-service]');

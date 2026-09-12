@@ -30,7 +30,7 @@ for(const [width,height] of [[360,800],[390,844],[430,932],[768,1024],[1024,900]
  for(const [name,selector] of [['principles','.principles'],['process','#process'],['about','#about'],['contacts','#contact'],['footer','.site-footer']]){await p.locator(selector).scrollIntoViewIfNeeded();await p.waitForTimeout(500);await p.screenshot({path:`${dir}/${name}-${width}.png`});}
  check(`${width}: footer padding normal`,await p.locator('.site-footer').evaluate(e=>parseFloat(getComputedStyle(e).paddingBottom)<=40));
  check(`${width}: MAX alongside WhatsApp and Telegram`,await p.locator('.messengers a').evaluateAll(a=>a.map(e=>e.textContent.trim().split(' ')[0]).join(','))==='WhatsApp,Telegram,MAX');
- const links=p.locator(`a[href="${max}"]`);check(`${width}: two safe direct MAX links`,await links.count()===2&&await links.evaluateAll(a=>a.every(e=>e.target==='_blank'&&e.rel.includes('noopener')&&e.rel.includes('noreferrer'))));
+ const links=p.locator(`a[href="${max}"]`);check(`${width}: three safe direct MAX links`,await links.count()===3&&await links.evaluateAll(a=>a.every(e=>e.target==='_blank'&&e.rel.includes('noopener')&&e.rel.includes('noreferrer'))));
  // Real clicks capture the URI; no calls, email or messages are sent.
  await p.evaluate(()=>{window.clickedContacts=[];document.addEventListener('click',e=>{const a=e.target.closest('a');if(a&&/^(tel:|mailto:|https:\/\/(wa.me|t.me|max.ru))/.test(a.href)){e.preventDefault();window.clickedContacts.push(a.href);}},true)});
  for(const href of expected)await p.locator(`#contact a[href="${href}"]`).click();
