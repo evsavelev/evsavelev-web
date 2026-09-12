@@ -15,6 +15,7 @@
 
   function label() {
     button.textContent = video.paused ? 'Play' : 'Pause';
+    button.dataset.paused = String(video.paused);
     button.setAttribute('aria-label', video.paused ? 'Воспроизвести видео' : 'Приостановить видео');
   }
   function sync() {

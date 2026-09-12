@@ -21,7 +21,7 @@ const options=[...services.map(s=>s.selection),'Другое'].map(s=>`<option>$
 let html = fs.readFileSync(path.join(root,'index.html'),'utf8').replace('<!-- PROJECTS -->',cards).replace('<!-- PRICING -->',pricing).replace('<!-- SERVICE_OPTIONS -->',options);
 fs.mkdirSync(out,{recursive:true});
 fs.writeFileSync(path.join(out,'index.html'),html);
-for(const file of ['styles.css','app.js','request.js','hero-video.js','404.html']) fs.copyFileSync(path.join(root,file),path.join(out,file));
+for(const file of ['styles.css','visual-v2.css','app.js','request.js','hero-video.js','404.html']) fs.copyFileSync(path.join(root,file),path.join(out,file));
 fs.cpSync(path.join(root,'assets'),path.join(out,'assets'),{recursive:true});
 fs.writeFileSync(path.join(out,'robots.txt'),`User-agent: *\nAllow: /\n\nSitemap: ${base}sitemap.xml\n`);
 fs.writeFileSync(path.join(out,'sitemap.xml'),`<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>${base}</loc></url></urlset>\n`);
