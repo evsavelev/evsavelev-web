@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/build.cjs
+      - run: node stitch-v2/build.cjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:
