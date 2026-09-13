@@ -1,5 +1,9 @@
 # Проверка сайта Евгения Савельева
 
+## Motion demo
+
+Локально: 152 PASS regression + 277 PASS формы + 60 PASS video. Параметры, проверка loop, A/B и ограничения эмуляции описаны в `MOTION-DEMO.md`; текущие протоколы — `verification/motion-*.json`. Production подтверждается отдельно после deployment.
+
 ## Бесплатное демо, стоимость и форма
 
 Коммерческие блоки сохраняют согласованный дизайн и прежние функции. Локально и на production: **152 PASS регрессии + 277 PASS формы**. Подробности, ограничения эмуляции/перехвата переходов и лабораторные метрики — `COMMERCIAL-UPDATE.md`. Протоколы: `verification/commercial-*.json`.
@@ -102,12 +106,5 @@ Telegram phone deep-link и WhatsApp открыты в Chrome: HTTP 200, вид�
 
 Первый автоматический run начался до включения Pages и завершился на `configure-pages` с 404. Pages включён через API с `build_type: workflow`; повторная попытка этого run успешно собрала и опубликовала сайт. Изменения интерфейса после публикации не потребовались. Последующее обновление документации и QA-артефактов не меняет содержимое `dist`; его deployment проверяется отдельно.
 
-## Hero V3 local QA — 2026-09-11
-
-Checkpoint: production base d095c8e014d0e62d11a61b1c1fde184db01da159 in isolated hero-v3-integration worktree. Original dirty worktree preserved; tracked diff saved at C:/LANDINGS/_archives/evsavelev-before-hero-v3-20260911/working-tree.patch.
-
-Chrome / Playwright: 360x800, 390x844, 430x932, 768x1024, 1024x900, 1440x900 passed. Visual screenshots inspected against DESIGN.md. No overflow; 16:9 within existing gutters. Autoplay, muted, loop, playsinline, no native controls, poster decode, Play/Pause, keyboard Pause, offscreen pause, return resume, persistent manual pause passed. Reduced-motion makes no MP4 request until manual Play; live preference change pauses. Failed MP4 leaves poster and CTA. No console/page errors. Loop verified across the 13.5-second boundary.
-
-Delayed-MP4 experiment at all six widths: heading/CTA remain available before media arrives; bounds identical before/after load; media-induced CLS = 0. Initial page CLS: mobile 0, tablet/desktop <0.001. Baseline without video reproduces the exact 768px initial shift (0.0005446766) in existing button/text; unrelated styling retained.
-
-HTML regression: removing only new media markup and script include reproduces baseline index.html exactly after normalizing Windows line endings. Source/public asset SHA-256 hashes match. Published MP4: 2,796,872 bytes; poster: 133,418 bytes. No master/WebM/source archive in build. Reproduce using scripts/qa-hero-video.cjs (QA_URL optional); detailed local outputs under qa/hero-v3-local.
+## Полный редизайн 2026-09-13
+Актуальная проверка новой тёмной версии: REDESIGN-QA.md. Предыдущие отчёты выше относятся к ранним вариантам. Текущий npm run qa запускает scripts/qa-redesign.cjs.
