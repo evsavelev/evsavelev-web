@@ -1,35 +1,51 @@
-# Digital Build — visual direction, September 2026
+﻿# evsavelev-web — Premium dark business promo
 
-## Reference lock
+Дата: 2026-09-13. Полная замена визуальной системы. Старый сайт — только источник реальных данных, контактов и ассетов.
 
-Research considered three directions: [Linear](https://linear.app/) — product interfaces and controlled hierarchy; [Vercel](https://vercel.com/) — structural grids and transitions between light and dark surfaces; [Framer](https://www.framer.com/) — visual-first creative presentation. Refero search and catalog refresh timed out in this session; direct official pages and the refero-design craft references were used as fallback. No catalog results are claimed.
+## Исследование и ограничения
+Использован refero-design и настроенный refero-free MCP (fidgetcoding-refero-mcp 0.2.0) через stdio SDK. Обновление refero_refresh выполнено: в sandbox fetch failed, с сетевым разрешением timeout 60s. Использован локальный каталог от 2026-09-12; это явно резервный источник, не успешное live-обновление. Результаты вызовов сохранены в qa/redesign/search-*.json и style-*.json. Отдельные screen/flow tools сервер не предоставляет; компоненты исследованы в полных designSystem.
 
-Primary direction: a light, precise digital studio, closest to the structural Vercel direction. The supplied film is the primary visual evidence. Keep existing Inter typography and personal, direct tone. Do not combine unrelated reference brand treatments.
+Исследованы направления:
+1. Cinematic digital gallery — Framer, https://www.framer.com, Refero 242db326-a6f3-482a-b12e-5e7f8af94981. Каталог: black gallery, белая типографика, один электрический синий. Полный стиль онлайн недоступен. Основное направление поддержано пользовательским брифом, не выдаётся за прочитанный полный стиль.
+2. Technical midnight — Linear https://linear.app (каталожная запись 90ce5883-bb24-4466-93f7-801cd617b0d1), Railway https://railway.app (полный стиль). Тёмные поверхности, тонкие границы, понятные primary/secondary действия. Не переносим фиолетовый и serif Railway; они противоречат задаче.
+3. Portfolio studio — Websmith https://websmith.studio и Dash https://dashdigital.studio (оба полных стиля). Крупные двухколоночные превью реальных работ. Websmith: геометрический sans 700, 88–96px, tracking -0.025em, 12px у изображений. Светлый фон и пастель не переносим.
+Дополнительно Revolut https://revolut.com (полный стиль): изучена подача UI внутри телефона; не переносим его цветовые токены/градиент, предназначенный только для promo bar.
 
-## Layout and hierarchy
+## Reference lock / выбранное направление
+Основание: пользовательский premium dark business brief + cinematic gallery Framer. Прямое внедрение разрешено инструкцией пользователя: исследовать внутренне, выбрать и продолжить.
+Сохранить: тёмный насыщенный холст; крупный жирный белый оффер; один синий цвет действий; реальные интерфейсы внутри ноутбука и телефона; сильное видимое портфолио. Не смешивать с quiet editorial.
+Главный визуальный приём: крупный ноутбук с «Технологией», перекрытый телефоном с реальной мобильной версией проекта. Сдержанный синий свет позади устройства. Ни выдуманных интерфейсов, ни фальшивых показателей роста.
 
-Header → wide 16:9 film → supplied four-line offer → supporting copy → two CTAs → phone and three messengers. Existing container remains; no text overlays on film. Video has reserved dimensions before loading. Hero offer uses a deliberate left alignment and a narrower reading measure. Demo receives a compact tinted surface; portfolio and native five-item pricing stay light. The existing approach section becomes the single graphite section. About, portrait and contacts remain calm.
+## Система
+- Фон #080c14; дополнительная поверхность #101725; интерактивная поверхность #151f30.
+- Текст #f4f7ff; вторичный #aab5c8; граница #29344a. Синий CTA #2463eb, hover #3475ff. Голубой #77b8ff — функциональные иконки, цена демо и текущий выбор.
+- Inter локально; проверить фактические оси шрифта. Заголовок 700–800, desktop 76–88px, mobile 46–54px; h2 38–56px / 32–38px; основной текст 16–18px, line-height 1.6. Один шрифт, без serif, italic и декоративной смены одного слова.
+- Контент max-width 1280px; поля 24px mobile, 40–64px desktop; базовая сетка 8px; gap 16/24/32/48; секции 72px mobile, 112px desktop.
+- Desktop hero 48/52: текст слева, устройства справа. Mobile текст, CTA, устройства. Никакой принудительной высоты в экран на телефоне.
+- Portfolio 2 колонки, 1 mobile. Первые 4 работы открыты; остальные 6 доступны через явное раскрытие. Все названия, ниши и описания из data/projects.json.
+- Кнопки min-height 48px, padding 16px 22px, radius 8px; синий primary и тёмный outline secondary; focus 2px голубой с offset 4px. Ссылки имеют hover и понятную область клика.
+- Изображения и интерактивные панели radius 12px. Не заключать каждый абзац в карточку. Доверие и этапы — типографика, иконки и разделители.
+- Услуги/цены: вертикальные раскрывающиеся форматы, все цены видны до раскрытия. Лендинг открыт изначально. Внутри: кому подходит, что входит, возможные функции, CTA. Допработы редизайн/развитие без выдуманной цены.
+- Бесплатное демо: отдельная синяя промо-панель, крупные 0 ₽, три условия явно. Синий заливочный промо-блок — из брифа, не заимствованный токен Revolut.
+- Фотография Евгения из существующих assets/images. Не генерировать и не менять внешность.
+- Motion: hover translateY до 3px, 180–240ms; без бесконечного видео/параллакса, без скрытия контента в ожидании JS. prefers-reduced-motion отключает перемещения/плавную прокрутку.
+- Контакт: реальные tel, WhatsApp, Telegram, MAX, email; существующая форма подготовки сообщения с валидацией. Не показывать ложное «отправлено».
 
-Spacing: 8px base, 16/24/32px internal gaps, 64–112px section rhythm. Existing desktop container and 20px mobile gutters. Film fills available width without cropping its center. On 360/390/430px, four H1 lines remain deliberate, buttons stack, contacts wrap, decorative fragments simplify.
+## Decision ledger
+| Решение | Источник | Роль | Причина |
+|---|---|---|---|
+| Dark blue canvas, blue CTA | Бриф + Framer catalog | Фон/действие | Коммерческая выразительность |
+| Жирный Inter, крупный масштаб | Бриф + Websmith Display Headline | Заголовки | Оффер читается первым |
+| Двухколоночные крупные работы | Websmith/Dash project cards | Реальное доказательство | Посетитель видит качество работ |
+| Ноутбук + телефон | Бриф + Revolut phone presentation | Демонстрация реального UI | Показать адаптивный результат |
+| Outline secondary, границы поверхностей | Railway components | Иерархия действий | Отличить главное действие |
+| Раскрывающиеся цены | Бриф + craft-details | Выбор услуги | Все стартовые цены доступны сразу |
+| 12 месяцев хостинга, домен отдельно | Бриф | Коммерческие условия | Убрать неопределённость |
+| Прямые каналы + подготовка заявки | Существующие реальные контакты | Конверсия | Быстрый контакт без фиктивного backend |
 
-## Tokens
+## Do / don't
+DO: реальные работы, цены, чёткий путь демо → обсуждение; доступность клавиатурой, читабельность 320px, нормальный контраст; responsive WebP и lazy loading ниже hero.
+DON'T: светло-серый минимализм, пастель, кислотные ореолы, отзывы и цифры без источника, декоративный dashboard, горизонтальный overflow, бессмысленные карточки, автозапускаемое тяжёлое видео.
 
-Background #F5F5F2; surface #FFFFFF; ink/dark #17191D; secondary #60646C; line #D9DCE2; primary #326BFF; cyan #45C7F2; violet #7357FF; accent surface #E9EFFF. Gradient limited to the quiet ambient light around the film. Text never relies on cyan/violet for contrast.
-
-Typography: existing locally hosted Inter; H1 76px desktop, fluid 33–40px mobile; existing section heading hierarchy. Body 16–18px with 1.5–1.65 leading. Eyebrows are small, readable, not decorative code labels.
-
-Buttons retain familiar rounded shape: blue filled primary, transparent outlined secondary, 44px minimum touch target. Hover arrow moves 3px; clear focus rings. Native tariff rows keep content and disclosure semantics; open row gains pale blue and a blue leading rule. No new card grid.
-
-Contrast adjustment: the exact primary with white small text measures 4.485:1. A 1.18% black overlay on filled buttons brings contrast above 4.5:1 while retaining the primary token. Small links on tinted backgrounds use graphite; blue remains in rules and arrows.
-
-## Digital build grid / motion
-
-A thin CSS grid and small browser-wireframe SVG sit behind and beside the film, noninteractive and aria-hidden. One small structural rule with a blue endpoint repeats at the process heading. Decorative geometry stays within the container and never covers controls or text. No WebGL/canvas, new library, fabricated screenshot or generated image.
-
-Existing scroll reveals use 14px / 440ms; project hover scale 1.02; tariff content enters over 300ms. No perpetual decorative animation. Reduced-motion disables transitions, transforms and entrance animation; video stays poster-only until manual play. Film keeps its existing lazy source, muted autoplay, loop, playsinline, visibility pause and manual-pause persistence. Dark translucent Pause/Play has an accessible Russian label and a 44px target.
-
-## Preservation and QA gate
-
-Preserve all portfolio and tariff data, free-demo terms, forms, contacts, portrait, metadata, schema, canonical and publication pipeline. Only hero copy changes to the supplied final text. No added marketing claims. No huge shadows, full-page gradients or tiny decorative labels.
-
-Inspect 360×800, 390×844, 430×932, 768×1024, 1024×900 and 1440×900; verify four-line H1, order, overflow, focus, forms, all five tariffs, portfolio, video states, reduced motion, poster, delayed-video layout stability, console and production asset loading. Compare screenshots to this reference lock before release.
+## Visual QA
+Проверить desktop 1440/1280, tablet 768, mobile 390/360/320; hero, портфолио, цены, раскрытия, форму, меню, финальный контакт. Сравнить с reference lock. Результаты — REDESIGN-QA.md и qa/redesign/*.png/json.
