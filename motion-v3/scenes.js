@@ -22,7 +22,10 @@ export function heroScene() {
   const animate=(selector,frames,options)=>{const el=canvas.querySelector(selector);if(el)animations.push(el.animate(frames,{fill:'backwards',easing:'cubic-bezier(.22,1,.36,1)',...options}));};
   animate('.canvas-grid',[{opacity:0},{opacity:.28}],{duration:250});
   animate('.guides',[{opacity:0,clipPath:'inset(0 100% 0 0)'},{opacity:1,clipPath:'inset(0)'}],{delay:150,duration:300});
-  animate('.site-object',[{opacity:0,transform:'translate(-50%,-50%) scale(.985)'},{opacity:1,transform:'translate(-50%,-50%) scale(1)'}],{delay:300,duration:400});
+  // The hero's flex container owns centering. Animate only the visual scale:
+  // neither keyframe replaces/repeats the positioning translate used by other scenes.
+  // scale(1) and the underlying transform:none have identical final geometry.
+  animate('.site-object',[{opacity:0,transform:'scale(.985)'},{opacity:1,transform:'scale(1)'}],{delay:300,duration:400});
   canvas.dataset.stage='2';
   for(const selector of ['.mini-copy','.mini-image','.mini-action','.mini-footer'])animate(selector,[{opacity:0},{opacity:1}],{delay:450,duration:450});
   const timers=[setTimeout(()=>canvas.dataset.stage='3',700),setTimeout(()=>canvas.dataset.stage='6',1400)];

@@ -1,0 +1,150 @@
+{
+  "base": "http://127.0.0.1:4203/evsavelev-web/motion-v3/index.html",
+  "viewports": [
+    {
+      "width": 360,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 390,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 430,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 768,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 1024,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 1440,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    },
+    {
+      "width": 1920,
+      "completionJumpPx": 0,
+      "releasedTransform": "none",
+      "checkpoints": [
+        0,
+        250,
+        300,
+        450,
+        600,
+        699,
+        700,
+        701,
+        900,
+        1200,
+        1400,
+        1600
+      ]
+    }
+  ],
+  "realTime": [
+    {
+      "width": 390,
+      "frames": 99,
+      "maxCenterDrift": 0.007843017578125
+    },
+    {
+      "width": 1440,
+      "frames": 102,
+      "maxCenterDrift": 0.000030517578125
+    }
+  ]
+}

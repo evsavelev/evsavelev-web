@@ -21,9 +21,12 @@ QA (requires the repository's Playwright dependency and installed Chrome):
 node scripts/qa-motion-v3.cjs
 node scripts/qa-motion-v3-review.cjs
 node scripts/qa-motion-v3-accessibility.cjs
+node scripts/qa-motion-v3-hero.cjs
+node scripts/qa-motion-v3-sites.cjs
 ```
 
-`QA_URL` overrides the target, including production. The accessibility script accepts
+`QA_URL` overrides the Motion v3 target, including production; `SITES_URL` sets the
+Main/Stitch root for the existing-sites smoke test. The accessibility script accepts
 `AXE_PATH` pointing to an installed `axe-core/axe.min.js`. No runtime dependency is
 added to the site. Screenshots and raw diagnostics are in `qa/motion-v3/`; committed
 reports are in `verification/motion-v3/`.
