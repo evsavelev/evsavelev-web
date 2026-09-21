@@ -1,0 +1,288 @@
+{
+  "base": "http://127.0.0.1:4203/evsavelev-web/motion-v3/index.html",
+  "date": "2026-09-21T10:45:24.230Z",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    }
+  ],
+  "checks": [
+    {
+      "responsiveLayouts": [
+        {
+          "width": 820,
+          "layout": "grid",
+          "menu": "none",
+          "imageRatio": "1.44 / 1"
+        },
+        {
+          "width": 510,
+          "layout": "grid",
+          "menu": "block",
+          "imageRatio": "1 / 1"
+        },
+        {
+          "width": 260,
+          "layout": "flex",
+          "menu": "block",
+          "imageRatio": "2.4 / 1"
+        }
+      ]
+    },
+    "Keyboard tab traversal: no focus trap",
+    "No-JS and reduced-motion desktop/mobile: all essential content, contacts, compact process",
+    "All baseline tracked files byte-equivalent through git clean filters; only additive Pages step changed"
+  ],
+  "performance": [
+    {
+      "width": 360,
+      "cls": 0,
+      "lcp": 1068,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 390,
+      "cls": 0,
+      "lcp": 1012,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 430,
+      "cls": 0,
+      "lcp": 1028,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 768,
+      "cls": 0,
+      "lcp": 1024,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 1024,
+      "cls": 0.06916544755299886,
+      "lcp": 1020,
+      "longTasks": [],
+      "shifts": [
+        {
+          "value": 0.016617024739583333,
+          "time": 4274.800000011921,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.009793700112236872,
+          "time": 4839.5,
+          "sources": [
+            "mini-image",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.02328911483287811,
+          "time": 4889.800000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.005486298667060004,
+          "time": 5454.600000023842,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.013979309201240539,
+          "time": 6103.900000035763,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "cls": 0.09535490749448088,
+      "lcp": 1024,
+      "longTasks": [],
+      "shifts": [
+        {
+          "value": 0.03591781978737997,
+          "time": 4643.300000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav"
+          ]
+        },
+        {
+          "value": 0.03454834426440329,
+          "time": 4691.899999976158,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.00009501457475994515,
+          "time": 5291.300000011921,
+          "sources": [
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.011776816587094906,
+          "time": 5339.800000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.007603572859064214,
+          "time": 5957.600000023842,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005413339421778549,
+          "time": 6806.800000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "mini-image",
+            "P",
+            "address"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "cls": 0.06165509665846334,
+      "lcp": 1116,
+      "longTasks": [
+        115
+      ],
+      "shifts": [
+        {
+          "value": 0.01683647802533436,
+          "time": 4405.300000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav"
+          ]
+        },
+        {
+          "value": 0.016187267915702158,
+          "time": 4437.5,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.01967990451388889,
+          "time": 5002.100000023842,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.0035803155781310284,
+          "time": 5569.699999988079,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005371130625406901,
+          "time": 6201.300000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    }
+  ]
+}
