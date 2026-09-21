@@ -61,5 +61,17 @@ Motion v3 не объявляется автоматически лучшей. �
 
 ## Публикация
 
-Production-приёмка выполняется отдельно после deployment; локальная проверка её не заменяет.
+Реализация сохранена в GitHub: commit `08bbb656356e12436984753463f1bee2c48b1912`,
+ветка `feat/motion-v3`, draft PR https://github.com/evsavelev/evsavelev-web/pull/1.
+
+Публикация заблокирована автоматической проверкой разрешений: прямой push в main
+отклонён из-за трактовки требования сохранить Main как запрета обновлять ветку main.
+Обход не выполнялся. Для интеграции PR и deployment необходимо явное разрешение
+пользователя на добавочные изменения main. Основной UI и Stitch v2 при этом остаются
+неизменными; изменяется только состав публикуемых файлов.
+
+Production URL Motion v3 пока не подтверждён. После разрешения: интегрировать проверенный
+PR, дождаться успешного Pages run, запустить QA с
+`QA_URL=https://evsavelev.github.io/evsavelev-web/motion-v3/`, затем
+`node scripts/verify-motion-v3-protection.cjs` и просмотреть production screenshots.
 Контрольные хеши опубликованных Main/Stitch сохранены в `production-baseline.json`.
