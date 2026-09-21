@@ -1,0 +1,38 @@
+[
+  {
+    "site": "main",
+    "width": 390,
+    "http": 200,
+    "contacts": true,
+    "navigation": true,
+    "form": true,
+    "errors": []
+  },
+  {
+    "site": "main",
+    "width": 1440,
+    "http": 200,
+    "contacts": true,
+    "navigation": true,
+    "form": true,
+    "errors": []
+  },
+  {
+    "site": "stitch-v2",
+    "width": 390,
+    "http": 200,
+    "contacts": true,
+    "navigation": true,
+    "form": true,
+    "errors": []
+  },
+  {
+    "site": "stitch-v2",
+    "width": 1440,
+    "http": 200,
+    "contacts": true,
+    "navigation": true,
+    "form": true,
+    "errors": []
+  }
+]

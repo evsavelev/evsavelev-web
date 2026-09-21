@@ -1,0 +1,277 @@
+{
+  "base": "https://evsavelev.github.io/evsavelev-web/motion-v3/",
+  "date": "2026-09-21T11:41:04.559Z",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    }
+  ],
+  "checks": [
+    {
+      "responsiveLayouts": [
+        {
+          "width": 820,
+          "layout": "grid",
+          "menu": "none",
+          "imageRatio": "1.44 / 1"
+        },
+        {
+          "width": 510,
+          "layout": "grid",
+          "menu": "block",
+          "imageRatio": "1 / 1"
+        },
+        {
+          "width": 260,
+          "layout": "flex",
+          "menu": "block",
+          "imageRatio": "2.4 / 1"
+        }
+      ]
+    },
+    "Keyboard tab traversal: no focus trap",
+    "No-JS and reduced-motion desktop/mobile: all essential content, contacts, compact process"
+  ],
+  "performance": [
+    {
+      "width": 360,
+      "cls": 0,
+      "lcp": 732,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 390,
+      "cls": 0,
+      "lcp": 408,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 430,
+      "cls": 0,
+      "lcp": 372,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 768,
+      "cls": 0,
+      "lcp": 376,
+      "longTasks": [],
+      "shifts": []
+    },
+    {
+      "width": 1024,
+      "cls": 0.06916544755299886,
+      "lcp": 376,
+      "longTasks": [],
+      "shifts": [
+        {
+          "value": 0.016617024739583333,
+          "time": 3831.199999988079,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.009793700112236872,
+          "time": 4363.399999976158,
+          "sources": [
+            "mini-image",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.02328911483287811,
+          "time": 4411.699999988079,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.005486298667060004,
+          "time": 4976.600000023842,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.013979309201240539,
+          "time": 5593.699999988079,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "cls": 0.09535490749448088,
+      "lcp": 616,
+      "longTasks": [],
+      "shifts": [
+        {
+          "value": 0.03591781978737997,
+          "time": 4666,
+          "sources": [
+            "mini-layout",
+            "mini-nav"
+          ]
+        },
+        {
+          "value": 0.03454834426440329,
+          "time": 4716.399999976158,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.00009501457475994515,
+          "time": 5331.899999976158,
+          "sources": [
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.011776816587094906,
+          "time": 5381.899999976158,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.007603572859064214,
+          "time": 5997.800000011921,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005413339421778549,
+          "time": 6813.599999964237,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "mini-image",
+            "P",
+            "address"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "cls": 0.04481861863312898,
+      "lcp": 380,
+      "longTasks": [],
+      "shifts": [
+        {
+          "value": 0.016187267915702158,
+          "time": 3751.2000000476837,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.01967990451388889,
+          "time": 4347.800000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.0035803155781310284,
+          "time": 4915.900000035763,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005371130625406901,
+          "time": 5564.900000035763,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    }
+  ]
+}

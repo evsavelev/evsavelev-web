@@ -1,0 +1,54 @@
+{
+  "checkedAt": "2026-09-21T11:41:27.763Z",
+  "matches": true,
+  "files": [
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/",
+      "sha256": "0cf08f2ca3c02c738b0f711251aead054d66031be2d0f807767ea2e5f430efef",
+      "expectedSha256": "0cf08f2ca3c02c738b0f711251aead054d66031be2d0f807767ea2e5f430efef",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/styles.css",
+      "sha256": "b0ac384e3993773ee5a7b84d746f70e5e7aa77a9dbc9b0510313bd7a20509a9e",
+      "expectedSha256": "b0ac384e3993773ee5a7b84d746f70e5e7aa77a9dbc9b0510313bd7a20509a9e",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/app.js",
+      "sha256": "b2837337c2df37a33226d6fa2abe40ff94c5a3554fcca9dfaf756291a09681db",
+      "expectedSha256": "b2837337c2df37a33226d6fa2abe40ff94c5a3554fcca9dfaf756291a09681db",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/request.js",
+      "sha256": "cc4268c134dea489f12a44b906d2978b8fb6efea356cf0714605fdd610908190",
+      "expectedSha256": "cc4268c134dea489f12a44b906d2978b8fb6efea356cf0714605fdd610908190",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/stitch-v2/",
+      "sha256": "1e290a5b733718bf0bc009242d7ab279b7b142f6217c3c5f68d9f60a77805123",
+      "expectedSha256": "1e290a5b733718bf0bc009242d7ab279b7b142f6217c3c5f68d9f60a77805123",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/stitch-v2/styles.css",
+      "sha256": "ef6404f57aa9455b5e3e228171a3697ff1d82ed9a26215fd0725437c03a3eb51",
+      "expectedSha256": "ef6404f57aa9455b5e3e228171a3697ff1d82ed9a26215fd0725437c03a3eb51",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/stitch-v2/app.js",
+      "sha256": "363ae8a4855bfd0820e499bcef977c0657d75f612fc8824d63a572df8f679475",
+      "expectedSha256": "363ae8a4855bfd0820e499bcef977c0657d75f612fc8824d63a572df8f679475",
+      "match": true
+    },
+    {
+      "url": "https://evsavelev.github.io/evsavelev-web/sitemap.xml",
+      "sha256": "541c674faceb69634b7f7e7f29d3b52883c7cb8260bcb9d0d92773e06f5845e0",
+      "expectedSha256": "541c674faceb69634b7f7e7f29d3b52883c7cb8260bcb9d0d92773e06f5845e0",
+      "match": true
+    }
+  ]
+}
