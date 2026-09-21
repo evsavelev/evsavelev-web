@@ -1,0 +1,318 @@
+{
+  "base": "http://127.0.0.1:4203/evsavelev-web/motion-v3/index.html",
+  "date": "2026-09-21T11:33:38.345Z",
+  "viewports": [
+    {
+      "width": 360,
+      "height": 800,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 430,
+      "height": 932,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 768,
+      "height": 1024,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1024,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1440,
+      "height": 900,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    },
+    {
+      "width": 1920,
+      "height": 1080,
+      "fullScroll": true,
+      "errors": [],
+      "overflow": false,
+      "assets": true,
+      "form": true
+    }
+  ],
+  "checks": [
+    {
+      "responsiveLayouts": [
+        {
+          "width": 820,
+          "layout": "grid",
+          "menu": "none",
+          "imageRatio": "1.44 / 1"
+        },
+        {
+          "width": 510,
+          "layout": "grid",
+          "menu": "block",
+          "imageRatio": "1 / 1"
+        },
+        {
+          "width": 260,
+          "layout": "flex",
+          "menu": "block",
+          "imageRatio": "2.4 / 1"
+        }
+      ]
+    },
+    "Keyboard tab traversal: no focus trap",
+    "No-JS and reduced-motion desktop/mobile: all essential content, contacts, compact process",
+    "All baseline tracked files byte-equivalent through git clean filters; only additive Pages step changed"
+  ],
+  "performance": [
+    {
+      "width": 360,
+      "cls": 0,
+      "lcp": 1200,
+      "longTasks": [
+        200,
+        60
+      ],
+      "shifts": []
+    },
+    {
+      "width": 390,
+      "cls": 0,
+      "lcp": 1196,
+      "longTasks": [
+        217,
+        76,
+        54
+      ],
+      "shifts": []
+    },
+    {
+      "width": 430,
+      "cls": 0,
+      "lcp": 1124,
+      "longTasks": [
+        190,
+        59
+      ],
+      "shifts": []
+    },
+    {
+      "width": 768,
+      "cls": 0,
+      "lcp": 1088,
+      "longTasks": [
+        172
+      ],
+      "shifts": []
+    },
+    {
+      "width": 1024,
+      "cls": 0.06916544755299886,
+      "lcp": 1120,
+      "longTasks": [
+        173,
+        64
+      ],
+      "shifts": [
+        {
+          "value": 0.016617024739583333,
+          "time": 4341.600000023842,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.009793700112236872,
+          "time": 4872.5,
+          "sources": [
+            "mini-image",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.02328911483287811,
+          "time": 4924.900000035763,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.005486298667060004,
+          "time": 5487.900000035763,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.013979309201240539,
+          "time": 6104,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "cls": 0.09995335731872641,
+      "lcp": 1172,
+      "longTasks": [
+        177,
+        77,
+        50
+      ],
+      "shifts": [
+        {
+          "value": 0.004598449824245542,
+          "time": 4622.700000047684,
+          "sources": [
+            "IMG",
+            "STRONG",
+            "mini-footer",
+            "#text",
+            "mini-cta"
+          ]
+        },
+        {
+          "value": 0.03591781978737997,
+          "time": 4724.200000047684,
+          "sources": [
+            "mini-layout",
+            "mini-nav"
+          ]
+        },
+        {
+          "value": 0.03454834426440329,
+          "time": 4773.700000047684,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.00009501457475994515,
+          "time": 5388.900000035763,
+          "sources": [
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.011776816587094906,
+          "time": 5439.400000035763,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.007603572859064214,
+          "time": 6055.300000011921,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005413339421778549,
+          "time": 6921.300000011921,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "mini-image",
+            "P",
+            "address"
+          ]
+        }
+      ]
+    },
+    {
+      "width": 1920,
+      "cls": 0.06165509665846334,
+      "lcp": 1108,
+      "longTasks": [
+        175
+      ],
+      "shifts": [
+        {
+          "value": 0.01683647802533436,
+          "time": 4380,
+          "sources": [
+            "mini-layout",
+            "mini-nav"
+          ]
+        },
+        {
+          "value": 0.016187267915702158,
+          "time": 4429.400000035763,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.01967990451388889,
+          "time": 4975,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        },
+        {
+          "value": 0.0035803155781310284,
+          "time": 5557.900000035763,
+          "sources": [
+            "site-object"
+          ]
+        },
+        {
+          "value": 0.005371130625406901,
+          "time": 6190.400000035763,
+          "sources": [
+            "mini-layout",
+            "mini-nav",
+            "address",
+            "SPAN"
+          ]
+        }
+      ]
+    }
+  ]
+}

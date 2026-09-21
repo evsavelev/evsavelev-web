@@ -1,0 +1,7 @@
+const fs=require('node:fs'),crypto=require('node:crypto'),assert=require('node:assert/strict');
+const urls=['','styles.css','app.js','request.js','stitch-v2/','stitch-v2/styles.css','stitch-v2/app.js','sitemap.xml'];
+const file='verification/motion-v3/production-baseline.json';
+(async()=>{const current=[];for(const suffix of urls){const url=`https://evsavelev.github.io/evsavelev-web/${suffix}`;const response=await fetch(url,{signal:AbortSignal.timeout(20000)});assert.equal(response.status,200,url);const bytes=Buffer.from(await response.arrayBuffer());current.push({url,sha256:crypto.createHash('sha256').update(bytes).digest('hex')});}
+ if(process.argv.includes('--capture')){assert.ok(!fs.existsSync(file),'Do not overwrite the production baseline');fs.writeFileSync(file,JSON.stringify(current,null,2));console.log('Captured Main / Stitch production baseline');}
+ else{const baseline=JSON.parse(fs.readFileSync(file,'utf8'));assert.deepEqual(current,baseline);if(process.argv.includes('--report')){fs.mkdirSync('qa/motion-v3/production',{recursive:true});fs.writeFileSync('qa/motion-v3/production/protection.json',JSON.stringify({checkedAt:new Date().toISOString(),matches:true,files:current.map((entry,i)=>({...entry,expectedSha256:baseline[i].sha256,match:true}))},null,2));}console.log('Main / Stitch / sitemap production bytes unchanged');}
+})().catch(e=>{console.error(e);process.exit(1)});
