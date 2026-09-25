@@ -25,6 +25,11 @@ must(home.includes('"url":"https://evsavelev.ru/"'), 'Schema.org person url');
 must(projects.includes('<link rel="canonical" href="https://evsavelev.ru/projects/">'), 'projects canonical');
 must(projects.includes('<meta property="og:url" content="https://evsavelev.ru/projects/">'), 'projects og:url');
 must(projects.includes('https://evsavelev.ru/assets/og.jpg'), 'projects og:image');
+must(home.includes('styles.css?v=20260925-2'), 'home CSS cache bust');
+must(home.includes('app.js?v=20260925-2'), 'home app JS cache bust');
+must(home.includes('request.js?v=20260925-2'), 'home request JS cache bust');
+must(projects.includes('../styles.css?v=20260925-2'), 'projects CSS cache bust');
+must(projects.includes('../app.js?v=20260925-2'), 'projects app JS cache bust');
 
 for (const [name, html] of [['home', home], ['projects', projects]]) {
   must(html.includes("mc.yandex.ru/metrika/tag.js?id=113000419"), name + ' Yandex Metrika loader');
