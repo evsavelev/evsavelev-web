@@ -1,0 +1,59 @@
+name: QA Request v4
+
+on:
+  push:
+    branches:
+      - feat/request-architecture-v4
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: qa-request-v4
+  cancel-in-progress: true
+
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: npm
+
+      - run: npm ci
+
+      - name: Install Playwright Chromium
+        run: npx playwright install --with-deps chromium
+
+      - name: Build static site
+        run: npm run build
+
+      - name: Start local server
+        run: |
+          PORT=4194 node scripts/serve.cjs > /tmp/evsavelev-qa-server.log 2>&1 &
+          for i in {1..30}; do
+            if curl -fsS http://127.0.0.1:4194/evsavelev-web/ > /dev/null; then
+              exit 0
+            fi
+            sleep 1
+          done
+          cat /tmp/evsavelev-qa-server.log
+          exit 1
+
+      - name: Run responsive QA
+        env:
+          QA_URL: http://127.0.0.1:4194/evsavelev-web/
+        run: npm run qa
+
+      - name: Upload QA screenshots and report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: request-v4-qa
+          path: qa/request-v4
+          if-no-files-found: warn
