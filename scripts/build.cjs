@@ -156,6 +156,5 @@ fs.writeFileSync(path.join(out, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${base}</loc></url>\n  <url><loc>${base}projects/</loc></url>\n</urlset>\n`);
 
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
-fs.writeFileSync(path.join(out, 'yandex_2c17695f91526c09.html'), 'Verification: 2c17695f91526c09\n');
 
 console.log(`Built homepage with ${Math.min(projects.length, 8)} featured projects and archive with ${projects.length} projects → dist/`);
