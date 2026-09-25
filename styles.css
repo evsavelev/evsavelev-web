@@ -360,3 +360,34 @@ h2 em,.hero-title em{font-family:Georgia,serif;font-weight:400}
   .marquee>div{animation:none}
   .project-media img{transform:none!important}
 }
+
+
+/* Production compact pass — denser commercial rhythm, immediate content visibility */
+@media (min-width:1101px){
+  .section{padding-block:100px}
+  .hero-grid{min-height:auto;padding-block:56px 48px;gap:4vw}
+  .hero-stage{min-height:560px}
+  .split-heading{margin-bottom:54px}
+  .direction-row{padding-block:26px}
+  .projects{padding-block:106px}
+  .projects-heading{margin-bottom:54px}
+  .editorial-grid{gap:24px}
+  .all-projects-cta{margin-top:50px}
+  .process-track li{min-height:195px;padding-top:24px;padding-bottom:30px}
+  .process-track h3{margin-top:38px}
+  .demo-band{margin-top:50px}
+  .full-cycle,.about,.final-cta{padding-block:106px}
+  .capability{min-height:280px}
+  .capability-main{min-height:350px}
+  .projects-hero{padding-block:78px 60px}
+  .projects-index{padding-bottom:106px}
+}
+@media (min-width:768px) and (max-width:1100px){
+  .section,.projects,.full-cycle,.about,.final-cta{padding-block:96px}
+  .projects-heading,.split-heading{margin-bottom:50px}
+}
+.portfolio-js .reveal{
+  opacity:1;
+  transform:none;
+  transition:none;
+}
