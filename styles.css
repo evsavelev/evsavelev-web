@@ -391,3 +391,53 @@ h2 em,.hero-title em{font-family:Georgia,serif;font-weight:400}
   transform:none;
   transition:none;
 }
+
+
+/* Ultra-wide production fix — tuned for browser zoom 80% / ~1600–2200 CSS px */
+@media (min-width:1600px){
+  :root{--wrap:min(1680px,calc(100vw - 96px))}
+  .header-inner{height:76px}
+  .hero-grid{
+    grid-template-columns:minmax(0,.92fr) minmax(0,1.08fr);
+    gap:48px;
+    padding-block:46px 38px;
+  }
+  .hero-title{font-size:clamp(66px,5.4vw,106px);max-width:10.6ch}
+  .hero-lead{font-size:20px;margin:26px 0 18px}
+  .hero-proof{margin-top:28px;padding-top:18px}
+  .hero-stage{min-height:500px}
+  .hero-browser-main{inset:7% 2% 12% 7%}
+  .hero-browser-float{width:43%;height:39%;right:-2%;bottom:0}
+  .section{padding-block:82px}
+  .split-heading{grid-template-columns:.62fr 1.38fr;gap:52px;margin-bottom:42px}
+  .direction-row{grid-template-columns:64px minmax(260px,.9fr) 1.1fr 48px;padding-block:21px}
+  .projects{padding-block:88px}
+  .projects-heading{grid-template-columns:1.15fr .85fr;gap:56px;margin-bottom:44px}
+  .editorial-grid{gap:22px}
+  .project-meta{margin:14px 0 8px}
+  .project-card h3{font-size:clamp(30px,2.4vw,46px)}
+  .project-link{margin-top:14px}
+  .all-projects-cta{margin-top:40px}
+  .process-track li{min-height:168px;padding-top:20px;padding-bottom:24px}
+  .process-track h3{margin:26px 0 8px;font-size:23px}
+  .demo-band{margin-top:40px;padding:28px 32px}
+  .full-cycle,.about,.final-cta{padding-block:88px}
+  .capability{min-height:240px;padding:24px}
+  .capability-main{min-height:310px}
+  .pricing-promo{margin-bottom:42px}
+  .price-item summary{padding:24px 0}
+  .price-detail{padding-bottom:28px}
+  .about-grid{grid-template-columns:.75fr 1.25fr;gap:64px}
+  .about-photo img{max-height:620px}
+  .about-copy h2{margin-bottom:24px}
+  .faq-list summary{padding:21px 0}
+  .final-cta-bottom{margin-top:52px;gap:64px}
+  .site-footer{padding-block:38px}
+  .projects-hero{padding-block:62px 46px}
+  .projects-index{padding-bottom:88px}
+}
+@media (min-width:1900px){
+  :root{--wrap:min(1760px,calc(100vw - 120px))}
+  .hero-grid{gap:56px}
+  .hero-stage{min-height:520px}
+}
