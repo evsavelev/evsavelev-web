@@ -53,7 +53,20 @@ async function revealForVisualQA(page) {
     await items.nth(i).scrollIntoViewIfNeeded();
     await page.waitForTimeout(45);
   }
-  await expect(page.locator(".portfolio-js .reveal:not(.is-visible)")).toHaveCount(0);
+  const leftover = await page.locator(".portfolio-js .reveal:not(.is-visible)").evaluateAll(elements =>
+    elements.map(el => {
+      const r = el.getBoundingClientRect();
+      return {
+        tag: el.tagName,
+        className: el.className,
+        text: (el.textContent || "").trim().replace(/\s+/g, " ").slice(0, 180),
+        rect: { x: r.x, y: r.y, width: r.width, height: r.height },
+        display: getComputedStyle(el).display,
+        visibility: getComputedStyle(el).visibility
+      };
+    })
+  );
+  if (leftover.length) throw new Error("Unrevealed elements: " + JSON.stringify(leftover));
   await page.evaluate(() => {
     window.scrollTo(0, 0);
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
