@@ -7,7 +7,7 @@ const base = 'https://evsavelev.ru/';
 const isProduction = process.env.PRODUCTION === '1';
 const projects = require('../data/projects.json');
 const services = require('../data/services.json');
-const assetVersion = '20260925-3';
+const assetVersion = '20260925-6';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
