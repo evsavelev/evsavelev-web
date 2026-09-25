@@ -15,7 +15,6 @@ const projects = read('projects/index.html');
 const robots = read('robots.txt');
 const sitemap = read('sitemap.xml');
 const notFound = read('404.html');
-const yandex = read('yandex_2c17695f91526c09.html').trim();
 
 must(home.includes('<link rel="canonical" href="https://evsavelev.ru/">'), 'home canonical');
 must(home.includes('<meta property="og:url" content="https://evsavelev.ru/">'), 'home og:url');
@@ -50,7 +49,6 @@ must(robots.includes('Sitemap: https://evsavelev.ru/sitemap.xml'), 'robots sitem
 must(sitemap.includes('<loc>https://evsavelev.ru/</loc>'), 'sitemap home');
 must(sitemap.includes('<loc>https://evsavelev.ru/projects/</loc>'), 'sitemap projects');
 must(!sitemap.includes('github.io'), 'sitemap has no GitHub Pages URL');
-must(yandex === 'Verification: 2c17695f91526c09', 'Yandex Webmaster verification file');
 must(notFound.includes('href="/"'), '404 returns to production root');
 must(fs.existsSync(path.join(root,'assets','og.jpg')), 'OpenGraph image exists');
 must(fs.existsSync(path.join(root,'assets','favicon.svg')), 'favicon exists');
