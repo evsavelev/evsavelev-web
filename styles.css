@@ -441,3 +441,57 @@ h2 em,.hero-title em{font-family:Georgia,serif;font-weight:400}
   .hero-grid{gap:56px}
   .hero-stage{min-height:520px}
 }
+
+
+/* Ultra-wide hero correction after measured QA failure (934px -> target <760px) */
+@media (min-width:1600px){
+  .hero-grid{
+    min-height:0!important;
+    height:auto;
+    align-items:start;
+    padding-block:30px 26px;
+    gap:42px;
+  }
+  .hero-copy{padding-top:8px}
+  .hero-title{
+    font-size:clamp(64px,4.7vw,92px);
+    line-height:.9;
+    max-width:10.8ch;
+  }
+  .hero-lead{
+    max-width:620px;
+    font-size:18px;
+    line-height:1.45;
+    margin:20px 0 14px;
+  }
+  .hero-offer{
+    max-width:610px;
+    gap:12px;
+    margin-bottom:16px;
+    padding:10px 12px;
+  }
+  .hero-offer-badge{min-width:70px;height:48px;font-size:22px}
+  .hero-offer-copy strong{font-size:15px}
+  .hero-actions .button{min-height:48px}
+  .hero-proof{
+    gap:18px 28px;
+    margin-top:18px;
+    padding-top:14px;
+  }
+  .hero-stage{
+    min-height:450px;
+    align-self:start;
+  }
+  .marquee{padding-block:14px}
+  .section{padding-block:72px}
+  .projects,.full-cycle,.about,.final-cta{padding-block:76px}
+  .split-heading,.projects-heading{margin-bottom:36px}
+  .all-projects-cta{margin-top:32px}
+  .demo-band{margin-top:32px}
+  .final-cta-bottom{margin-top:42px}
+}
+@media (min-width:1900px){
+  .hero-grid{padding-block:28px 24px}
+  .hero-title{font-size:90px}
+  .hero-stage{min-height:460px}
+}
