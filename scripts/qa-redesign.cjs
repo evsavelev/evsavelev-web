@@ -88,6 +88,14 @@ async function checkHome(browser, width) {
   await expect(page.locator("h1")).toContainText("Создаю сайты");
   await expect(page.locator(".editorial-grid .project-card")).toHaveCount(8);
   await expect(page.locator(".price-list .price-item")).toHaveCount(5);
+
+  const featuredCards = page.locator(".editorial-grid .project-card");
+  for (let i = 0; i < await featuredCards.count(); i++) {
+    const card = featuredCards.nth(i);
+    await card.scrollIntoViewIfNeeded();
+    await expect(card).toHaveClass(/is-visible/);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
   await expect(page.locator("#request-dialog")).toHaveCount(1);
 
   await page.screenshot({ path: outDir + "/hero-" + width + ".png", fullPage: false });
@@ -155,6 +163,13 @@ async function checkProjects(browser, width) {
   expect(layout.missingAnchors).toEqual([]);
 
   await expect(page.locator(".projects-archive .project-card")).toHaveCount(10);
+  const archiveCards = page.locator(".projects-archive .project-card");
+  for (let i = 0; i < await archiveCards.count(); i++) {
+    const card = archiveCards.nth(i);
+    await card.scrollIntoViewIfNeeded();
+    await expect(card).toHaveClass(/is-visible/);
+  }
+  await page.evaluate(() => window.scrollTo(0, 0));
 
   const hrefs = await page.locator("a[href]").evaluateAll(es => es.map(e => e.getAttribute("href")));
   for (const href of [
