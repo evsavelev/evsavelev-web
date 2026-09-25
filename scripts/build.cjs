@@ -3,7 +3,8 @@ const path = require('node:path');
 
 const root = path.resolve(__dirname, '..');
 const out = path.join(root, 'dist');
-const base = 'https://evsavelev.github.io/evsavelev-web/';
+const base = 'https://evsavelev.ru/';
+const isProduction = process.env.PRODUCTION === '1';
 const projects = require('../data/projects.json');
 const services = require('../data/services.json');
 
@@ -98,6 +99,23 @@ const options = [...services.map(service => service.selection), 'Другое']
   .map(value => `<option>${escape(value)}</option>`)
   .join('');
 
+const metrikaHead = isProduction ? `<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function(m,e,t,r,i,k,a){
+    m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+})(window, document,'script','https://mc.yandex.ru/metrika/tag.js?id=113000419', 'ym');
+
+ym(113000419, 'init', {ssr:true, webvisor:true, clickmap:true, ecommerce:"dataLayer", referrer: document.referrer, url: location.href, accurateTrackBounce:true, trackLinks:true});
+</script>
+<!-- /Yandex.Metrika counter -->` : '';
+
+const metrikaBody = isProduction ? `<!-- Yandex.Metrika counter: fallback without JavaScript -->
+<noscript><div><img src="https://mc.yandex.ru/watch/113000419" style="position:absolute; left:-9999px;" alt=""></div></noscript>
+<!-- /Yandex.Metrika counter -->` : '';
+
 const render = (template, replacements) => Object.entries(replacements)
   .reduce((html, [marker, value]) => html.replace(marker, value), template);
 
@@ -107,11 +125,15 @@ const projectsTemplate = fs.readFileSync(path.join(root, 'projects', 'index.html
 const mainHtml = render(mainTemplate, {
   '<!-- HOME_PROJECTS -->': homeProjects,
   '<!-- PRICING -->': pricing,
-  '<!-- SERVICE_OPTIONS -->': options
+  '<!-- SERVICE_OPTIONS -->': options,
+  '<!-- ANALYTICS_HEAD -->': metrikaHead,
+  '<!-- ANALYTICS_BODY -->': metrikaBody
 });
 
 const projectsHtml = render(projectsTemplate, {
-  '<!-- ALL_PROJECTS -->': allProjects
+  '<!-- ALL_PROJECTS -->': allProjects,
+  '<!-- ANALYTICS_HEAD -->': metrikaHead,
+  '<!-- ANALYTICS_BODY -->': metrikaBody
 });
 
 fs.rmSync(out, {recursive:true, force:true});
@@ -134,5 +156,6 @@ fs.writeFileSync(path.join(out, 'sitemap.xml'),
   `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url><loc>${base}</loc></url>\n  <url><loc>${base}projects/</loc></url>\n</urlset>\n`);
 
 fs.writeFileSync(path.join(out, '.nojekyll'), '');
+fs.writeFileSync(path.join(out, 'yandex_2c17695f91526c09.html'), 'Verification: 2c17695f91526c09\n');
 
 console.log(`Built homepage with ${Math.min(projects.length, 8)} featured projects and archive with ${projects.length} projects → dist/`);
