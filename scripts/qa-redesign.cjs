@@ -46,6 +46,31 @@ async function layoutState(page) {
   }));
 }
 
+async function revealForVisualQA(page) {
+  const selectors = [
+    "#directions",
+    "#projects",
+    "#process",
+    ".full-cycle",
+    "#prices",
+    "#about",
+    "#faq",
+    "#contact"
+  ];
+  for (const selector of selectors) {
+    const el = page.locator(selector);
+    if (await el.count()) {
+      await el.scrollIntoViewIfNeeded();
+      await page.waitForTimeout(160);
+    }
+  }
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  });
+  await page.waitForTimeout(250);
+}
+
 async function checkHome(browser, width) {
   const page = await browser.newPage({ viewport: { width, height: 900 } });
   attachNetwork(page);
@@ -61,6 +86,8 @@ async function checkHome(browser, width) {
   await expect(page.locator(".editorial-grid .project-card")).toHaveCount(8);
   await expect(page.locator(".price-list .price-item")).toHaveCount(5);
   await expect(page.locator("#request-dialog")).toHaveCount(1);
+
+  await page.screenshot({ path: outDir + "/hero-" + width + ".png", fullPage: false });
 
   if (width <= 1024) {
     await expect(page.locator(".menu-toggle")).toBeVisible();
@@ -85,7 +112,30 @@ async function checkHome(browser, width) {
   await expect(page.locator("#request-dialog")).not.toBeVisible();
   await expect(heroCta).toBeFocused();
 
+  await revealForVisualQA(page);
   await page.screenshot({ path: outDir + "/home-" + width + ".png", fullPage: true });
+
+  if (width === 1440 || width === 390) {
+    for (const [name, selector] of [
+      ["directions", "#directions"],
+      ["projects", "#projects"],
+      ["process", "#process"],
+      ["cycle", ".full-cycle"],
+      ["prices", "#prices"],
+      ["about", "#about"],
+      ["faq", "#faq"],
+      ["contact", "#contact"]
+    ]) {
+      const section = page.locator(selector);
+      if (await section.count()) {
+        await section.scrollIntoViewIfNeeded();
+        await page.waitForTimeout(120);
+        await section.screenshot({ path: outDir + "/" + name + "-" + width + ".png" });
+      }
+    }
+    await page.evaluate(() => window.scrollTo(0, 0));
+  }
+
   checks.push({ page: "home", width, layout });
   await page.close();
 }
@@ -121,6 +171,14 @@ async function checkProjects(browser, width) {
     await expect(page.locator(".desktop-nav")).toBeVisible();
   }
 
+  await page.screenshot({ path: outDir + "/projects-hero-" + width + ".png", fullPage: false });
+  await page.locator(".projects-index").scrollIntoViewIfNeeded();
+  await page.waitForTimeout(200);
+  await page.evaluate(() => {
+    window.scrollTo(0, 0);
+    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
+  });
+  await page.waitForTimeout(200);
   await page.screenshot({ path: outDir + "/projects-" + width + ".png", fullPage: true });
   checks.push({ page: "projects", width, layout });
   await page.close();
