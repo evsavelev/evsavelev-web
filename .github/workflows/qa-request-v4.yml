@@ -51,6 +51,20 @@ jobs:
           QA_URL: http://127.0.0.1:4194/evsavelev-web/
         run: npm run qa
 
+      - name: Build production package
+        run: npm run build:production
+
+      - name: Verify production package
+        run: npm run qa:production
+
+      - name: Upload production package
+        uses: actions/upload-artifact@v4
+        with:
+          name: evsavelev-ru-production
+          path: dist
+          if-no-files-found: error
+          include-hidden-files: true
+
       - name: Upload QA screenshots and report
         if: always()
         uses: actions/upload-artifact@v4
