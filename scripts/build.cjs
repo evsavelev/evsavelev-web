@@ -7,6 +7,7 @@ const base = 'https://evsavelev.ru/';
 const isProduction = process.env.PRODUCTION === '1';
 const projects = require('../data/projects.json');
 const services = require('../data/services.json');
+const assetVersion = '20260925-3';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
@@ -23,10 +24,10 @@ const card = (project, index, {prefix = '', editorial = false} = {}) => {
   const extraClass = editorial ? homeClass(index) : '';
   return `<article class="project-card ${extraClass} reveal">
     <a class="project-media" href="${escape(projectUrl(project))}" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт ${escape(project.name)} в новой вкладке">
-      <img src="${prefix}assets/portfolio/${project.slug}-720.webp"
-           srcset="${prefix}assets/portfolio/${project.slug}-720.webp 720w, ${prefix}assets/portfolio/${project.slug}-1440.webp 1440w"
+      <img src="${prefix}assets/portfolio/${project.slug}-720.webp?v=${assetVersion}"
+           srcset="${prefix}assets/portfolio/${project.slug}-720.webp?v=${assetVersion} 720w, ${prefix}assets/portfolio/${project.slug}-1440.webp?v=${assetVersion} 1440w"
            sizes="${editorial ? '(max-width: 767px) calc(100vw - 32px), 70vw' : '(max-width: 767px) calc(100vw - 32px), 50vw'}"
-           width="1440" height="1000" loading="${index < 2 ? 'eager' : 'lazy'}" decoding="async"
+           width="1440" height="1000" loading="${index < 6 ? 'eager' : 'lazy'}" decoding="async"
            alt="Главная страница сайта «${escape(project.name)}» — ${escape(project.niche.toLowerCase())}">
       <span class="project-open" aria-hidden="true">↗</span>
     </a>
