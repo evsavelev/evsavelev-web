@@ -72,13 +72,13 @@ const pricing = services.slice(1).map((service, index) => {
   return `<details class="price-item reveal" data-price-name="${escape(service.name)}" ${index === 0 ? 'open' : ''}>
     <summary>
       <h3>${escape(service.name)}</h3>
-      <span class="price-value">${escape(service.price)}</span>
+      <span class="price-stack"><span class="price-old">${escape(service.regularPrice || '')}</span><span class="price-value">${escape(service.price)}</span></span>
       <span class="price-plus" aria-hidden="true">+</span>
     </summary>
     <div class="price-detail">
       <div>
         <p class="price-detail-intro">${escape(meta.audience)}</p>
-        <p class="price-scope">${escape(meta.duration)}</p>
+        <p class="price-scope">${escape(meta.duration)}</p><p class="price-promo-note">Цена со скидкой 50% до 31.12.2026</p>
       </div>
       <div>
         <div class="price-specs">
