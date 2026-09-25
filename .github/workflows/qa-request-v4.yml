@@ -5,6 +5,7 @@ on:
   push:
     branches:
       - feat/request-architecture-v4
+      - release/evsavelev-ru-v4
   workflow_dispatch:
 
 permissions:
