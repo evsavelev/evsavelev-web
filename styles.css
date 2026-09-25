@@ -217,8 +217,9 @@ h2 em,.hero-title em{font-family:Georgia,serif;font-weight:400}
 .menu-demo{display:block;margin:22px 0;font-weight:750;color:var(--accent)}
 .menu-phone{font-size:22px}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.65,.2,1)}
-.reveal.is-visible{opacity:1;transform:none}
+.reveal{opacity:1;transform:none}
+.portfolio-js .reveal{opacity:0;transform:translateY(28px);transition:opacity .75s ease,transform .75s cubic-bezier(.2,.65,.2,1)}
+.portfolio-js .reveal.is-visible{opacity:1;transform:none}
 
 .projects-page .site-header{position:sticky}
 .projects-hero{padding-block:100px 80px}
