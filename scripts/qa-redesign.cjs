@@ -88,6 +88,15 @@ async function checkHome(browser, width) {
   await expect(page.locator("h1")).toContainText("Создаю сайты");
   await expect(page.locator(".editorial-grid .project-card")).toHaveCount(8);
   await expect(page.locator(".price-list .price-item")).toHaveCount(5);
+  await expect(page.locator(".hero-offer")).toContainText("−50%");
+  await expect(page.locator(".hero-offer")).toContainText("31 декабря 2026");
+  await expect(page.locator(".pricing-promo")).toContainText("Скидка 50%");
+  for (const price of ["от 17 500 ₽","от 30 000 ₽","от 50 000 ₽","от 65 000 ₽","от 80 000 ₽"]) {
+    await expect(page.locator(".price-value").filter({ hasText: price })).toHaveCount(1);
+  }
+  for (const oldPrice of ["от 35 000 ₽","от 60 000 ₽","от 100 000 ₽","от 130 000 ₽","от 160 000 ₽"]) {
+    await expect(page.locator(".price-old").filter({ hasText: oldPrice })).toHaveCount(1);
+  }
 
   const featuredCards = page.locator(".editorial-grid .project-card");
   for (let i = 0; i < await featuredCards.count(); i++) {
@@ -213,6 +222,8 @@ async function checkProjects(browser, width) {
   await nojs.goto(base, { waitUntil: "networkidle" });
   await expect(nojs.locator(".editorial-grid .project-card")).toHaveCount(8);
   await expect(nojs.locator(".price-list .price-item")).toHaveCount(5);
+  await expect(nojs.locator(".hero-offer")).toContainText("−50%");
+  await expect(nojs.locator(".pricing-promo")).toContainText("Скидка 50%");
   await expect(nojs.locator(".hero .reveal").first()).toBeVisible();
   await expect(nojs.locator("#directions .reveal").first()).toBeVisible();
   await expect(nojs.locator("#projects .project-card").first()).toBeVisible();
