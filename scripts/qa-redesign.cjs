@@ -5,7 +5,7 @@ const base = process.env.QA_URL || "http://127.0.0.1:4194/evsavelev-web/";
 const outDir = "qa/request-v4";
 fs.mkdirSync(outDir, { recursive: true });
 
-const widths = [360, 390, 430, 768, 1024, 1440];
+const widths = [360, 390, 430, 768, 1024, 1440, 1600, 1920, 2048];
 const errors = [];
 const failed = [];
 const checks = [];
@@ -82,6 +82,12 @@ async function checkHome(browser, width) {
 
   const layout = await layoutState(page);
   expect(layout.scrollWidth).toBeLessThanOrEqual(width);
+  if (width >= 1600) {
+    const wrapWidth = await page.locator(".wrap").first().evaluate(e => e.getBoundingClientRect().width);
+    expect(wrapWidth).toBeGreaterThan(1450);
+    const hero = await page.locator(".hero-grid").boundingBox();
+    expect(hero.height).toBeLessThan(760);
+  }
   expect(layout.brokenImages).toEqual([]);
   expect(layout.missingAnchors).toEqual([]);
 
@@ -135,7 +141,7 @@ async function checkHome(browser, width) {
   await revealForVisualQA(page);
   await page.screenshot({ path: outDir + "/home-" + width + ".png", fullPage: true });
 
-  if (width === 1440 || width === 390) {
+  if ([390,1440,1920,2048].includes(width)) {
     for (const [name, selector] of [
       ["directions", "#directions"],
       ["projects", "#projects"],
@@ -209,7 +215,7 @@ async function checkProjects(browser, width) {
   const browser = await chromium.launch({ headless: true });
 
   for (const width of widths) await checkHome(browser, width);
-  for (const width of [360, 390, 430, 1024, 1440]) await checkProjects(browser, width);
+  for (const width of [360, 390, 430, 1024, 1440, 1920, 2048]) await checkProjects(browser, width);
 
   const reduced = await browser.newPage({ reducedMotion: "reduce", viewport: { width: 390, height: 844 } });
   attachNetwork(reduced);
