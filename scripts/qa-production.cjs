@@ -25,12 +25,12 @@ must(home.includes('"url":"https://evsavelev.ru/"'), 'Schema.org person url');
 must(projects.includes('<link rel="canonical" href="https://evsavelev.ru/projects/">'), 'projects canonical');
 must(projects.includes('<meta property="og:url" content="https://evsavelev.ru/projects/">'), 'projects og:url');
 must(projects.includes('https://evsavelev.ru/assets/og.jpg'), 'projects og:image');
-must(home.includes('styles.css?v=20260925-4'), 'home CSS cache bust');
-must(home.includes('app.js?v=20260925-4'), 'home app JS cache bust');
-must(home.includes('request.js?v=20260925-4'), 'home request JS cache bust');
-must(projects.includes('../styles.css?v=20260925-4'), 'projects CSS cache bust');
-must(projects.includes('../app.js?v=20260925-4'), 'projects app JS cache bust');
-must(home.includes('kinder-party-dom-nizhnevartovsk-720.webp?v=20260925-4'), 'Kinder Party thumbnail cache bust');
+must(home.includes('styles.css?v=20260925-5'), 'home CSS cache bust');
+must(home.includes('app.js?v=20260925-5'), 'home app JS cache bust');
+must(home.includes('request.js?v=20260925-5'), 'home request JS cache bust');
+must(projects.includes('../styles.css?v=20260925-5'), 'projects CSS cache bust');
+must(projects.includes('../app.js?v=20260925-5'), 'projects app JS cache bust');
+must(home.includes('kinder-party-dom-nizhnevartovsk-720.webp?v=20260925-5'), 'Kinder Party thumbnail cache bust');
 must(home.includes('loading="eager"'), 'eager portfolio image loading present');
 
 for (const [name, html] of [['home', home], ['projects', projects]]) {
