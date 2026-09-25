@@ -47,11 +47,13 @@ async function layoutState(page) {
 }
 
 async function revealForVisualQA(page) {
-  const height = await page.evaluate(() => document.documentElement.scrollHeight);
-  for (let y = 0; y < height; y += 620) {
-    await page.evaluate(value => window.scrollTo(0, value), y);
-    await page.waitForTimeout(70);
+  const items = page.locator(".reveal");
+  const count = await items.count();
+  for (let i = 0; i < count; i++) {
+    await items.nth(i).scrollIntoViewIfNeeded();
+    await page.waitForTimeout(45);
   }
+  await expect(page.locator(".portfolio-js .reveal:not(.is-visible)")).toHaveCount(0);
   await page.evaluate(() => {
     window.scrollTo(0, 0);
     if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
