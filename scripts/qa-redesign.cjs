@@ -47,22 +47,10 @@ async function layoutState(page) {
 }
 
 async function revealForVisualQA(page) {
-  const selectors = [
-    "#directions",
-    "#projects",
-    "#process",
-    ".full-cycle",
-    "#prices",
-    "#about",
-    "#faq",
-    "#contact"
-  ];
-  for (const selector of selectors) {
-    const el = page.locator(selector);
-    if (await el.count()) {
-      await el.scrollIntoViewIfNeeded();
-      await page.waitForTimeout(160);
-    }
+  const height = await page.evaluate(() => document.documentElement.scrollHeight);
+  for (let y = 0; y < height; y += 620) {
+    await page.evaluate(value => window.scrollTo(0, value), y);
+    await page.waitForTimeout(70);
   }
   await page.evaluate(() => {
     window.scrollTo(0, 0);
@@ -172,13 +160,7 @@ async function checkProjects(browser, width) {
   }
 
   await page.screenshot({ path: outDir + "/projects-hero-" + width + ".png", fullPage: false });
-  await page.locator(".projects-index").scrollIntoViewIfNeeded();
-  await page.waitForTimeout(200);
-  await page.evaluate(() => {
-    window.scrollTo(0, 0);
-    if (document.activeElement instanceof HTMLElement) document.activeElement.blur();
-  });
-  await page.waitForTimeout(200);
+  await revealForVisualQA(page);
   await page.screenshot({ path: outDir + "/projects-" + width + ".png", fullPage: true });
   checks.push({ page: "projects", width, layout });
   await page.close();
@@ -201,6 +183,11 @@ async function checkProjects(browser, width) {
   await nojs.goto(base, { waitUntil: "networkidle" });
   await expect(nojs.locator(".editorial-grid .project-card")).toHaveCount(8);
   await expect(nojs.locator(".price-list .price-item")).toHaveCount(5);
+  await expect(nojs.locator(".hero .reveal").first()).toBeVisible();
+  await expect(nojs.locator("#directions .reveal").first()).toBeVisible();
+  await expect(nojs.locator("#projects .project-card").first()).toBeVisible();
+  await expect(nojs.locator("#about .reveal").first()).toBeVisible();
+  await expect(nojs.locator("#contact .reveal").first()).toBeVisible();
   expect(await nojs.evaluate(() => document.documentElement.scrollWidth)).toBeLessThanOrEqual(390);
   await nojs.screenshot({ path: outDir + "/home-390-nojs.png", fullPage: true });
   await nojs.close();
