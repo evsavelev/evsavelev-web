@@ -1,41 +1,46 @@
-# evsavelev.ru — production deployment
+# evsavelev.ru — GitHub Pages production
 
-## Цель
-Production-сборка утверждённой версии Request v4 для основного домена https://evsavelev.ru/.
+## Source of truth and deployment
+- Public repo: https://github.com/evsavelev/evsavelev-web
+- Production domain: https://evsavelev.ru/
+- Published site: GitHub Actions workflow `.github/workflows/pages.yml` on pushes to `main`.
+- Publication uses `npm ci` → `npm run build:production` → `npm run qa:production` → build noindex design demos → upload `dist/` → `deploy-pages`.
+- Do **not** publish with plain `npm run build`: it intentionally omits Yandex Metrika.
+- GitHub Pages custom domain `evsavelev.ru` is configured in repository Settings → Pages.
+- DNS is managed at REG.RU, independently from its paid hosting.
 
-## Что сохраняется
-- основной домен: https://evsavelev.ru/
-- существующий HTTPS/Let's Encrypt и серверные редиректы не менять
-- Яндекс.Метрика: 113000419
-- Google Search Console: существующее подтверждение не менять; отдельного Google Analytics/gtag в исходном production index.html нет
-- телефон: +7 908 899-00-88
-- WhatsApp, Telegram, MAX, email — текущие реальные ссылки проекта
+## DNS required at REG.RU
+- Nameservers: ns1.reg.ru and ns2.reg.ru.
+- Apex A (`@`): 185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153.
+- CNAME `www` → evsavelev.github.io.
+- No older hosting A or AAAA records should remain in **active** zone.
+- Retain/recreate existing Google Search Console domain TXT verification and other verified domain TXT records before final DNS cutover; they are DNS records, not GitHub files.
+- Enable Enforce HTTPS after GitHub verifies DNS and issues a certificate.
 
-## Сборка
-```
+## Production invariants
+- Correct canonical, Open Graph and Schema.org URLs use https://evsavelev.ru/.
+- Yandex Metrika counter 113000419 (once per page) included by `PRODUCTION=1`.
+- `robots.txt` and `sitemap.xml` produced by `scripts/build.cjs` use evsavelev.ru and include / and /projects/.
+- The projects page is served at /projects/.
+- Contacts: +7 908 899-00-88; WhatsApp / Telegram / MAX / email as in source.
+- Request form only prepares a message; it does not send to a backend.
+- Offer/pricing text is kept as reviewed in this branch; do not silently change it during a hosting move.
+
+## Test locally
+```sh
 npm ci
 npm run build:production
 npm run qa:production
 ```
 
-Готовое содержимое для корня сайта находится в `dist/`.
+For visual QA run the existing responsive Playwright suite as documented in the repository.
 
-## Перед заменой файлов на сервере
-1. Сделать архив текущего корня сайта на сервере.
-2. Не менять DNS, SSL и существующую конфигурацию редиректов.
-3. Заменять только файлы сайта содержимым `dist/`.
+## Safe release and rollback
+1. Create a branch/checkpoint before changes to main.
+2. Open PR and require production QA before merge.
+3. Merge after testing; GitHub Actions deploys automatically.
+4. Check Pages workflow conclusion and open https://evsavelev.ru/ and /projects/ once DNS has propagated.
+5. Roll back with revert of the merge commit if needed, never force-push.
+6. After DNS is active, recheck HTTPS, Google Search Console and Yandex Webmaster verification, sitemap crawling and Metrika dashboard.
 
-## После выкладки
-Проверить:
-- https://evsavelev.ru/
-- https://evsavelev.ru/projects/
-- https://evsavelev.ru/robots.txt
-- https://evsavelev.ru/sitemap.xml
-- телефон и все мессенджеры
-- форму заявки
-- цены со скидкой 50% до 31.12.2026
-- Яндекс.Метрику 113000419
-- отсутствие ошибок в консоли
-- mobile 360/390/430 и desktop 1440
-
-После успешной проверки отправить sitemap в Google Search Console и Яндекс Вебмастер / запросить переобход главной и /projects/.
+Note: until delegation propagates publicly, HTTPS and the custom-domain health check can fail despite correct new REG.RU zone entries.
