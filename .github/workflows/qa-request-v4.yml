@@ -6,13 +6,15 @@ on:
     branches:
       - feat/request-architecture-v4
       - release/evsavelev-ru-v4
+  pull_request:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: read
 
 concurrency:
-  group: qa-request-v4
+  group: qa-request-v4-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
