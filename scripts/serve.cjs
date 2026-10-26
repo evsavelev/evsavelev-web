@@ -4,7 +4,8 @@ const types={'.html':'text/html; charset=utf-8','.css':'text/css','.js':'text/ja
 http.createServer((req,res)=>{
  let url;try{url=decodeURIComponent(new URL(req.url,'http://localhost').pathname)}catch{res.writeHead(400);res.end();return}
  if(url==='/'){res.writeHead(302,{Location:prefix});res.end();return}
- const file=path.resolve(root,url.startsWith(prefix)?url.slice(prefix.length)||'index.html':'__missing');
+ let file=path.resolve(root,url.startsWith(prefix)?url.slice(prefix.length)||'index.html':'__missing');
+ if(file.startsWith(root+path.sep)&&fs.existsSync(file)&&fs.statSync(file).isDirectory())file=path.join(file,'index.html');
  if(!file.startsWith(root+path.sep)||!fs.existsSync(file)||!fs.statSync(file).isFile()){res.writeHead(404,{'Content-Type':'text/html; charset=utf-8'});res.end(fs.readFileSync(path.join(root,'404.html')));return}
  const size=fs.statSync(file).size,headers={'Content-Type':types[path.extname(file)]||'application/octet-stream','Cache-Control':'no-store','Accept-Ranges':'bytes'};
  const range=req.headers.range?.match(/^bytes=(\d+)-(\d*)$/);
