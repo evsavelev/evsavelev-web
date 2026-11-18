@@ -6,6 +6,7 @@ on:
     branches:
       - feat/request-architecture-v4
       - release/evsavelev-ru-v4
+      - feature/2gis-reviews-20261119
   pull_request:
     branches: [main]
   workflow_dispatch:
