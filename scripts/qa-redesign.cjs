@@ -54,7 +54,12 @@ async function revealForVisualQA(page) {
     await page.waitForTimeout(45);
   }
   const leftover = await page.locator(".portfolio-js .reveal:not(.is-visible)").evaluateAll(elements =>
-    elements.map(el => {
+    elements.filter(el => {
+      const style = getComputedStyle(el);
+      // Production intentionally displays reveal elements without waiting for an animation class.
+      // Treat only truly transparent content as a regression.
+      return style.display !== "none" && style.visibility !== "hidden" && Number(style.opacity) < 0.98;
+    }).map(el => {
       const r = el.getBoundingClientRect();
       return {
         tag: el.tagName,
@@ -93,6 +98,21 @@ async function checkHome(browser, width) {
 
   await expect(page.locator("h1")).toContainText("Создаю сайты");
   await expect(page.locator(".editorial-grid .project-card")).toHaveCount(8);
+  const reviews = page.locator("#reviews");
+  await expect(reviews).toBeVisible();
+  await expect(reviews).toContainText("Биток-консалтинг");
+  await expect(reviews).toContainText("Андрей Савельев");
+  const reviewsUrl = "https://2gis.ru/nizhnevartovsk/firm/70000001118870070/tab/reviews";
+  await expect(reviews.getByRole("link", { name: /Читать отзывы на 2ГИС/ })).toHaveAttribute("href", reviewsUrl);
+  await expect(reviews.getByRole("link", { name: /Оставить отзыв/ })).toHaveAttribute("href", reviewsUrl);
+  const sectionOrder = await page.evaluate(() => ({
+    projects: document.querySelector("#projects")?.getBoundingClientRect().top,
+    reviews: document.querySelector("#reviews")?.getBoundingClientRect().top,
+    process: document.querySelector("#process")?.getBoundingClientRect().top
+  }));
+  expect(sectionOrder.projects).toBeLessThan(sectionOrder.reviews);
+  expect(sectionOrder.reviews).toBeLessThan(sectionOrder.process);
+
   await expect(page.locator(".price-list .price-item")).toHaveCount(5);
   await expect(page.locator(".hero-offer")).toContainText("−50%");
   await expect(page.locator(".hero-offer")).toContainText("31 декабря 2026");

@@ -16,6 +16,23 @@ const robots = read('robots.txt');
 const sitemap = read('sitemap.xml');
 const notFound = read('404.html');
 
+
+// 2GIS review: authentic source, unchanged featured projects, both navigations and CTA destinations.
+const reviewUrl = 'https://2gis.ru/nizhnevartovsk/firm/70000001118870070/tab/reviews';
+must(home.includes('class="editorial-grid"'), 'featured real project thumbnails preserved');
+must(home.includes('id="reviews"'), 'reviews section');
+must(home.indexOf('id="projects"') < home.indexOf('id="reviews"') &&
+  home.indexOf('id="reviews"') < home.indexOf('id="process"'), 'reviews immediately after featured projects');
+must(home.includes('Андрей Савельев') && home.includes('Биток-консалтинг'), 'verified author and client project');
+must(home.includes('Результатом очень доволен!'), 'real verified review excerpt');
+must(home.includes('class="review-stars" role="img" aria-label="Оценка 5 из 5 звёзд"'), 'accessible 5-star review');
+must(home.includes('Читать отзывы на 2ГИС') && home.includes('Оставить отзыв'), 'both review CTAs');
+must(home.split(reviewUrl).length - 1 === 2, 'both review CTAs lead to the public 2GIS reviews page');
+must(home.includes('<a href="#reviews">Отзывы</a>') &&
+  home.includes('<a href="#reviews">Отзывы <span>↗</span></a>'), 'home desktop/mobile review navigation');
+must(projects.includes('<a href="../#reviews">Отзывы</a>') &&
+  projects.includes('<a href="../#reviews">Отзывы <span>↗</span></a>'), 'projects desktop/mobile review navigation');
+
 must(home.includes('<link rel="canonical" href="https://evsavelev.ru/">'), 'home canonical');
 must(home.includes('<meta property="og:url" content="https://evsavelev.ru/">'), 'home og:url');
 must(home.includes('https://evsavelev.ru/assets/og.jpg'), 'home og:image');
