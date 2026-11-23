@@ -42,11 +42,11 @@ must(home.includes('"url":"https://evsavelev.ru/"'), 'Schema.org person url');
 must(projects.includes('<link rel="canonical" href="https://evsavelev.ru/projects/">'), 'projects canonical');
 must(projects.includes('<meta property="og:url" content="https://evsavelev.ru/projects/">'), 'projects og:url');
 must(projects.includes('https://evsavelev.ru/assets/og.jpg'), 'projects og:image');
-must(home.includes('styles.css?v=20260925-6'), 'home CSS cache bust');
-must(home.includes('app.js?v=20260925-6'), 'home app JS cache bust');
-must(home.includes('request.js?v=20260925-6'), 'home request JS cache bust');
-must(projects.includes('../styles.css?v=20260925-6'), 'projects CSS cache bust');
-must(projects.includes('../app.js?v=20260925-6'), 'projects app JS cache bust');
+const stylesVersion = home.match(/href="styles\.css\?v=([\d-]+)"/)?.[1];
+const appVersion = home.match(/src="app\.js\?v=([\d-]+)"/)?.[1];
+must(stylesVersion && projects.includes(`../styles.css?v=${stylesVersion}`), 'shared CSS cache bust');
+must(appVersion && projects.includes(`../app.js?v=${appVersion}`), 'shared app JS cache bust');
+must(/src="request\.js\?v=[\d-]+"/.test(home), 'home request JS cache bust');
 must(home.includes('kinder-party-dom-nizhnevartovsk-720.webp?v=20260925-6'), 'Kinder Party thumbnail cache bust');
 must(home.includes('loading="eager"'), 'eager portfolio image loading present');
 
@@ -60,12 +60,32 @@ for (const [name, html] of [['home', home], ['projects', projects]]) {
   must(!html.includes('<!-- ANALYTICS_BODY -->'), name + ' analytics body placeholder resolved');
 }
 
-for (const price of ['от 17 500 ₽','от 30 000 ₽','от 50 000 ₽','от 65 000 ₽','от 80 000 ₽']) {
-  must(home.includes(price), 'discounted price ' + price);
+const expectedCatalog = [
+  ['business-card', 'Сайт-визитка', 'от 17 500 ₽'],
+  ['landing', 'Разработка современного продающего лендинга', 'от 25 000 ₽'],
+  ['corporate', 'Корпоративный сайт', 'от 50 000 ₽'],
+  ['catalog', 'Сайт-каталог', 'от 65 000 ₽'],
+  ['custom-project', 'Индивидуальный проект', 'от 80 000 ₽'],
+  ['bug-fixes', 'Исправление ошибок на сайте', 'от 2 000 ₽'],
+  ['support', 'Техническая поддержка сайта', 'от 3 000 ₽'],
+  ['site-improvements', 'Доработка существующего сайта', 'от 3 000 ₽'],
+  ['redesign', 'Редизайн сайта', 'от 15 000 ₽'],
+  ['basic-seo', 'Базовая SEO-оптимизация', 'от 5 000 ₽'],
+  ['telegram-bot', 'Чат-бот для Telegram', 'от 10 000 ₽'],
+  ['hosting-migration', 'Перенос сайта на другой хостинг', 'от 3 000 ₽']
+];
+const priceItems = [...home.matchAll(/<article class="price-item"[^>]*>[\s\S]*?<\/article>/g)].map(([html]) => html);
+must(priceItems.length === expectedCatalog.length, 'exactly 12 paid services');
+must((home.match(/<section class="price-group"/g) || []).length === 6, 'six named service categories');
+must((home.match(/<h1[\s>]/g) || []).length === 1, 'one home H1');
+for (const [index, [id, name, price]] of expectedCatalog.entries()) {
+  const card = priceItems[index] || '';
+  must(card.includes(`id="service-${id}"`) && card.includes(`>${name}</h4>`) &&
+    card.includes(`class="price-value">${price}</p>`) && card.includes(`data-service="${id}"`), `card and price for ${id}`);
+  must(home.includes(`<option value="${id}" data-name="${name}">${name} — ${price}</option>`), `form option for ${id}`);
 }
-for (const price of ['от 35 000 ₽','от 60 000 ₽','от 100 000 ₽','от 130 000 ₽','от 160 000 ₽']) {
-  must(home.includes(price), 'regular price ' + price);
-}
+must(home.includes('<option value="demo" data-name="Бесплатное демо">Бесплатное демо — 0 ₽</option>'), 'free demo in form');
+must(!/(?:скидк[аиу] 50|[−-]50%|31 декабря 2026|31\.12\.2026|от (30|35|60|100|130|160) 000 ₽|price-old)/iu.test(home), 'no expired promotion or obsolete prices');
 
 must(robots.includes('User-agent: *'), 'robots user agent');
 must(robots.includes('Allow: /'), 'robots allow');
@@ -77,7 +97,7 @@ must(notFound.includes('href="/"'), '404 returns to production root');
 must(fs.existsSync(path.join(root,'assets','og.jpg')), 'OpenGraph image exists');
 must(fs.existsSync(path.join(root,'assets','favicon.svg')), 'favicon exists');
 
-for (const token of ['<!-- HOME_PROJECTS -->','<!-- PRICING -->','<!-- SERVICE_OPTIONS -->','<!-- ALL_PROJECTS -->']) {
+for (const token of ['<!-- HOME_PROJECTS -->','<!-- PRICING -->','<!-- SERVICE_OPTIONS -->','<!-- ALL_PROJECTS -->','{{CATALOG_VERSION}}','{{DEMO_PRICE}}']) {
   must(!home.includes(token) && !projects.includes(token), 'build placeholder resolved: ' + token);
 }
 

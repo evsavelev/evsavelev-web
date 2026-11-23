@@ -6,13 +6,13 @@
   <meta name="theme-color" content="#090b10">
   <script>document.documentElement.classList.add('portfolio-js');</script>
   <title>Создание сайтов для бизнеса — Евгений Савельев</title>
-  <meta name="description" content="Создаю сайты для бизнеса: лендинги, сайты компаний, корпоративные сайты и каталоги. До 31 декабря 2026 — скидка 50% на разработку. Персональное демо за 0 ₽.">
+  <meta name="description" content="Создание сайтов в Нижневартовске и по всей России. Лендинги, корпоративные сайты, каталоги, SEO и техническая поддержка. Персональное демо за {{DEMO_PRICE}}.">
   <link rel="canonical" href="https://evsavelev.ru/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="ru_RU">
   <meta property="og:site_name" content="Евгений Савельев">
   <meta property="og:title" content="Сайты, которые помогают бизнесу продавать — Евгений Савельев">
-  <meta property="og:description" content="Реальные проекты, персональное демо за 0 ₽ и скидка 50% на разработку до 31 декабря 2026.">
+  <meta property="og:description" content="Разработка, доработка и поддержка сайтов для бизнеса. Реальные проекты, цены и персональное демо за {{DEMO_PRICE}}.">
   <meta property="og:url" content="https://evsavelev.ru/">
   <meta property="og:image" content="https://evsavelev.ru/assets/og.jpg">
   <meta property="og:image:alt" content="Евгений Савельев — создание сайтов для бизнеса">
@@ -22,10 +22,10 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/fonts/fonts.css?v=20260925-6">
-  <link rel="stylesheet" href="styles.css?v=20260925-6">
-  <script src="app.js?v=20260925-6" defer></script>
-  <script src="request.js?v=20260925-6" defer></script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://evsavelev.ru/#person","name":"Евгений Савельев","url":"https://evsavelev.ru/","jobTitle":"Разработчик сайтов","description":"Создание сайтов для бизнеса: лендинги, сайты компаний, корпоративные сайты и каталоги.","telephone":"+79088990088","email":"evsavelev.region@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Нижневартовск","addressCountry":"RU"},"knowsAbout":["Создание сайтов","Веб-дизайн","UX/UI","Разработка лендингов","Корпоративные сайты"]}</script>
+  <link rel="stylesheet" href="styles.css?v={{CATALOG_VERSION}}">
+  <script src="app.js?v={{CATALOG_VERSION}}" defer></script>
+  <script src="request.js?v={{CATALOG_VERSION}}" defer></script>
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","@id":"https://evsavelev.ru/#person","name":"Евгений Савельев","url":"https://evsavelev.ru/","jobTitle":"Разработчик сайтов","description":"Разработка сайтов для бизнеса, доработка сайтов, SEO-оптимизация и техническая поддержка в Нижневартовске и по всей России.","telephone":"+79088990088","email":"evsavelev.region@gmail.com","address":{"@type":"PostalAddress","addressLocality":"Нижневартовск","addressCountry":"RU"},"knowsAbout":["Создание сайтов","Веб-дизайн","UX/UI","Разработка лендингов","Корпоративные сайты"]}</script>
   <!-- ANALYTICS_HEAD -->
 </head>
 <body>
@@ -46,7 +46,7 @@
       <a href="#about">Обо мне</a>
       <a href="#contact">Контакты</a>
     </nav>
-    <a class="button button-small header-cta" href="#contact" data-service="Бесплатное демо — 0 ₽">Получить демо за 0 ₽</a>
+    <a class="button button-small header-cta" href="#contact" data-service="demo">Получить демо за {{DEMO_PRICE}}</a>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="menu-dialog" hidden>Меню <span aria-hidden="true">☰</span></button>
   </div>
 </header>
@@ -58,17 +58,16 @@
         <p class="eyebrow reveal">Евгений Савельев · дизайн + разработка</p>
         <h1 class="hero-title reveal">Создаю сайты,<br>которые помогают<br><em>бизнесу продавать.</em></h1>
         <p class="hero-lead reveal">Продумываю структуру, визуальную подачу, мобильную версию и техническую часть. Работаю напрямую — от идеи до публикации.</p>
-        <a class="hero-offer reveal" href="#prices" aria-label="Посмотреть цены со скидкой 50 процентов">
-          <span class="hero-offer-badge">−50%</span>
-          <span class="hero-offer-copy"><strong>До 31 декабря 2026</strong><small>на все форматы разработки</small></span>
-          <span class="hero-offer-link">Смотреть цены ↓</span>
+        <a class="hero-offer reveal" href="#prices">
+          <strong>Актуальные цены на разработку сайтов</strong>
+          <span class="hero-offer-link" aria-hidden="true">↓</span>
         </a>
         <div class="hero-actions reveal">
           <a class="button" href="#projects">Посмотреть проекты <span aria-hidden="true">↓</span></a>
-          <a class="button button-ghost" href="#contact" data-service="Бесплатное демо — 0 ₽">Получить демо за 0 ₽ <span aria-hidden="true">↗</span></a>
+          <a class="button button-ghost" href="#contact" data-service="demo">Получить демо за {{DEMO_PRICE}} <span aria-hidden="true">↗</span></a>
         </div>
         <div class="hero-proof reveal">
-          <span><strong>0 ₽</strong> персональное демо</span>
+          <span><strong>{{DEMO_PRICE}}</strong> персональное демо</span>
           <span><strong>без договора</strong> до решения</span>
           <span><strong>без предоплаты</strong> за демо</span>
         </div>
@@ -99,19 +98,19 @@
         <h2>Не «просто сайт».<br><em>Подходящий формат</em><br>под задачу бизнеса.</h2>
       </div>
       <div class="direction-list">
-        <a class="direction-row reveal" href="#prices" data-price-target="Лендинг">
+        <a class="direction-row reveal" href="#service-landing">
           <span class="direction-number">01</span><h3>Лендинги</h3><p>Для одной услуги, продукта или рекламного предложения.</p><span class="direction-arrow">↗</span>
         </a>
-        <a class="direction-row reveal" href="#prices" data-price-target="Сайт компании">
+        <a class="direction-row reveal" href="#service-business-card">
           <span class="direction-number">02</span><h3>Сайты компаний</h3><p>Полноценное представительство бизнеса: услуги, работы, доверие, контакты.</p><span class="direction-arrow">↗</span>
         </a>
-        <a class="direction-row reveal" href="#prices" data-price-target="Корпоративный сайт">
+        <a class="direction-row reveal" href="#service-corporate">
           <span class="direction-number">03</span><h3>Корпоративные сайты</h3><p>Для нескольких направлений, большой структуры и объёма информации.</p><span class="direction-arrow">↗</span>
         </a>
-        <a class="direction-row reveal" href="#prices" data-price-target="Сайт-каталог">
+        <a class="direction-row reveal" href="#service-catalog">
           <span class="direction-number">04</span><h3>Каталоги</h3><p>Категории, карточки, фильтрация и удобный просмотр ассортимента.</p><span class="direction-arrow">↗</span>
         </a>
-        <a class="direction-row reveal" href="#prices" data-price-target="Индивидуальный проект">
+        <a class="direction-row reveal" href="#service-custom-project">
           <span class="direction-number">05</span><h3>Индивидуальная разработка</h3><p>Нестандартная структура, CMS, интеграции и специальная функциональность.</p><span class="direction-arrow">↗</span>
         </a>
       </div>
@@ -173,7 +172,7 @@
       <ol class="process-track">
         <li class="reveal"><span>01</span><h3>Знакомство</h3><p>Разбираюсь в бизнесе, задаче и аудитории.</p></li>
         <li class="reveal"><span>02</span><h3>Конкуренты</h3><p>Смотрю рынок и ищу, чем можно выделиться.</p></li>
-        <li class="reveal"><span>03</span><h3>Демо 0 ₽</h3><p>Показываю персональное направление до оплаты.</p></li>
+        <li class="reveal"><span>03</span><h3>Демо {{DEMO_PRICE}}</h3><p>Показываю персональное направление до оплаты.</p></li>
         <li class="reveal"><span>04</span><h3>Согласование</h3><p>Фиксируем структуру, стиль и объём работы.</p></li>
         <li class="reveal"><span>05</span><h3>Разработка</h3><p>Собираю страницы и нужный функционал.</p></li>
         <li class="reveal"><span>06</span><h3>Адаптив</h3><p>Проверяю телефон, планшет и desktop.</p></li>
@@ -181,9 +180,9 @@
         <li class="reveal"><span>08</span><h3>Поддержка</h3><p>Можно развивать сайт дальше по мере роста бизнеса.</p></li>
       </ol>
       <div class="demo-band reveal">
-        <div><span class="demo-zero">0 ₽</span><p>Персональное демо<br>до начала основной работы</p></div>
+        <div><span class="demo-zero">{{DEMO_PRICE}}</span><p>Персональное демо<br>до начала основной работы</p></div>
         <div class="demo-band-meta"><span>Без договора</span><span>Без предоплаты</span><span>Без обязательств продолжать</span></div>
-        <a class="button" href="#contact" data-service="Бесплатное демо — 0 ₽">Получить демо <span aria-hidden="true">↗</span></a>
+        <a class="button" href="#contact" data-service="demo">Получить демо <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -206,22 +205,16 @@
     </div>
   </section>
 
-  <section class="pricing light-section" id="prices">
+  <section class="pricing light-section" id="prices" aria-labelledby="prices-title">
     <div class="wrap section">
       <div class="section-heading split-heading reveal">
-        <p class="eyebrow">Стоимость</p>
-        <h2>До конца года —<br><em>вдвое выгоднее.</em></h2>
-      </div>
-      <div class="pricing-promo reveal">
-        <div class="pricing-promo-mark">−50%</div>
-        <div class="pricing-promo-copy">
-          <strong>Скидка 50% до 31 декабря 2026</strong>
-          <p>На все форматы разработки. Ниже сразу показаны обычная и действующая до конца года цены.</p>
+        <p class="eyebrow">Услуги и цены</p>
+        <div>
+          <h2 id="prices-title">Создание сайтов и <em>цифровые услуги</em></h2>
+          <p class="pricing-lead">Разработка сайтов для бизнеса, SEO-оптимизация, техническая поддержка и автоматизация. Работаю в Нижневартовске и по всей России. Стоимость зависит от сложности и объёма задачи.</p>
         </div>
-        <a class="button" href="#contact" data-service="Бесплатное демо — 0 ₽">Начать с демо за 0 ₽ <span aria-hidden="true">↗</span></a>
       </div>
       <div class="price-list"><!-- PRICING --></div>
-      <p class="price-footnote">Итоговая стоимость зависит от количества страниц, материалов, CMS, интеграций и нестандартного функционала. Объём и цена согласуются до начала основной разработки.</p>
     </div>
   </section>
 
@@ -237,7 +230,7 @@
         <p class="about-lead">Создаю сайты для бизнеса без искусственной «команды агентства».</p>
         <p>Сам разбираюсь в задаче, собираю структуру, продумываю визуальную подачу, контролирую разработку и довожу проект до публикации.</p>
         <p>Для меня важно, чтобы сайт не выглядел шаблонным и чтобы посетителю сразу было понятно: что предлагает компания, почему ей можно доверять и как сделать следующий шаг.</p>
-        <a class="button button-ghost" href="#contact" data-service="Другое">Обсудить задачу <span aria-hidden="true">↗</span></a>
+        <a class="button button-ghost" href="#contact" data-service="other">Обсудить задачу <span aria-hidden="true">↗</span></a>
       </div>
     </div>
   </section>
@@ -249,10 +242,9 @@
         <h2>До начала<br><em>работы.</em></h2>
       </div>
       <div class="faq-list">
-        <details class="reveal"><summary>Скидка 50% действительно действует на все форматы?<span>+</span></summary><p>Да. До 31 декабря 2026 включительно на все форматы разработки на сайте действует скидка 50%. В блоке стоимости показаны обычная цена и цена со скидкой.</p></details>
-        <details class="reveal"><summary>Почему цена указана «от»?<span>+</span></summary><p>Два сайта одного типа могут сильно отличаться по количеству страниц, материалам и функциональности. Итоговую стоимость согласуем до начала основной разработки.</p></details>
-        <details class="reveal"><summary>Что входит в стоимость?<span>+</span></summary><p>Структура, дизайн, тексты, разработка, мобильная версия, базовая SEO-подготовка, техническая проверка и публикация. Конкретный состав фиксируем под выбранный формат проекта.</p></details>
-        <details class="reveal"><summary>Демо действительно бесплатное?<span>+</span></summary><p>Да. Предварительная персональная демо-концепция предоставляется за 0 ₽, без договора и предоплаты. Это направление и основные блоки, а не законченный коммерческий сайт.</p></details>
+        <details class="reveal"><summary>Почему цена указана «от»?<span>+</span></summary><p>Цена «от» — стоимость для минимального объёма работ. Обычно на расчёт влияют количество страниц, материалы и функциональность. Итоговую цену согласуем до начала работ.</p></details>
+        <details class="reveal"><summary>Что входит в разработку сайта?<span>+</span></summary><p>В разработку сайта входят структура, дизайн, тексты, мобильная версия, базовая SEO-подготовка, техническая проверка и публикация. Состав работ уточняем для выбранного формата.</p></details>
+        <details class="reveal"><summary>Демо действительно бесплатное?<span>+</span></summary><p>Да. Предварительная персональная демо-концепция предоставляется за {{DEMO_PRICE}}, без договора и предоплаты. Это направление и основные блоки, а не законченный коммерческий сайт.</p></details>
         <details class="reveal"><summary>Что с доменом и хостингом?<span>+</span></summary><p>Помогу подключить домен и разместить сайт. Домен оформляется на владельца бизнеса и оплачивается по тарифу регистратора. Условия хостинга согласуем при запуске.</p></details>
         <details class="reveal"><summary>Можно потом расширить сайт?<span>+</span></summary><p>Да. Можно добавлять страницы, разделы, каталог, интеграции и новый функционал по мере развития бизнеса.</p></details>
       </div>
@@ -265,8 +257,8 @@
       <h2 class="reveal">Покажите мне ваш бизнес —<br><em>я покажу, каким может быть его сайт.</em></h2>
       <div class="final-cta-bottom reveal">
         <div>
-          <a class="button button-light" href="#contact" data-service="Бесплатное демо — 0 ₽">Получить демо за 0 ₽ <span aria-hidden="true">↗</span></a>
-          <p class="final-note">0 ₽ / без договора / без предоплаты<br><strong>До 31 декабря 2026 — −50% на разработку сайта</strong></p>
+          <a class="button button-light" href="#contact" data-service="demo">Получить демо за {{DEMO_PRICE}} <span aria-hidden="true">↗</span></a>
+          <p class="final-note">{{DEMO_PRICE}} / без договора / без предоплаты</p>
         </div>
         <div class="contact-stack">
           <a href="tel:+79088990088"><small>Телефон</small><span>+7 908 899-00-88 ↗</span></a>
@@ -295,7 +287,7 @@
     <div class="request-fields">
       <div><label for="request-name">Имя <span aria-hidden="true">*</span></label><input id="request-name" name="name" autocomplete="name" required maxlength="100" aria-describedby="name-error"><p class="field-error" id="name-error" aria-live="polite"></p></div>
       <div><label for="request-phone">Телефон <span aria-hidden="true">*</span></label><input id="request-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required maxlength="40" aria-describedby="phone-error"><p class="field-error" id="phone-error" aria-live="polite"></p></div>
-      <div class="field-wide"><label for="request-service">Что нужно</label><select id="request-service" name="service"><!-- SERVICE_OPTIONS --></select></div>
+      <div class="field-wide"><label for="request-service">Что нужно</label><select id="request-service" name="service"><!-- SERVICE_OPTIONS --></select><p class="request-selection" aria-live="polite" hidden></p></div>
       <div class="field-wide"><label for="request-comment">Комментарий <span class="optional">— необязательно</span></label><textarea id="request-comment" name="comment" rows="3" maxlength="1200" placeholder="Коротко расскажите о компании или задаче"></textarea></div>
     </div>
     <p class="form-privacy">Данные не сохраняются на сайте. Форма только подготавливает сообщение для выбранного способа связи.</p>
@@ -311,7 +303,7 @@
   <nav aria-label="Мобильная навигация">
     <a href="#projects">Проекты <span>↗</span></a><a href="#reviews">Отзывы <span>↗</span></a><a href="#directions">Услуги <span>↗</span></a><a href="#prices">Стоимость <span>↗</span></a><a href="#about">Обо мне <span>↗</span></a><a href="#contact">Контакты <span>↗</span></a>
   </nav>
-  <a class="menu-demo" href="#contact" data-service="Бесплатное демо — 0 ₽">Получить демо за 0 ₽ ↗</a>
+  <a class="menu-demo" href="#contact" data-service="demo">Получить демо за {{DEMO_PRICE}} ↗</a>
   <a class="menu-phone" href="tel:+79088990088">+7 908 899-00-88</a>
 </dialog>
 </body>

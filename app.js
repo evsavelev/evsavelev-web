@@ -12,8 +12,20 @@
   dialogs.forEach(dialog => {
     dialog.querySelector('[data-close]')?.addEventListener('click', () => dialog.close());
     dialog.addEventListener('close', () => {
+      if (dialogs.some(item => item.open)) return;
       document.body.classList.remove('dialog-open');
       if (dialog.returnFocus?.isConnected) dialog.returnFocus.focus({ preventScroll: true });
+    });
+    dialog.addEventListener('keydown', event => {
+      if (event.key !== 'Tab') return;
+      const controls = [...dialog.querySelectorAll('a[href], button, input, select, textarea')]
+        .filter(control => !control.disabled && control.getClientRects().length);
+      const first = controls[0];
+      const last = controls.at(-1);
+      if (event.shiftKey ? document.activeElement === first : document.activeElement === last) {
+        event.preventDefault();
+        (event.shiftKey ? last : first).focus();
+      }
     });
     dialog.addEventListener('click', event => {
       if (event.target !== dialog) return;
@@ -51,18 +63,6 @@
     syncHeader();
     window.addEventListener('scroll', syncHeader, { passive: true });
   }
-
-  document.querySelectorAll('[data-price-target]').forEach(link => {
-    link.addEventListener('click', () => {
-      const target = link.dataset.priceTarget;
-      requestAnimationFrame(() => {
-        const details = [...document.querySelectorAll('.price-item')].find(item => item.dataset.priceName === target);
-        if (!details) return;
-        details.open = true;
-        if (!reduceMotion) setTimeout(() => details.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
-      });
-    });
-  });
 
   const finePointer = window.matchMedia('(pointer: fine)').matches;
   if (!reduceMotion && finePointer) {

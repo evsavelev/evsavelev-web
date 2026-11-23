@@ -2,21 +2,40 @@
   const dialog=document.querySelector('#request-dialog'),form=document.querySelector('#request-form');
   const name=form.elements.name,phone=form.elements.phone,service=form.elements.service,comment=form.elements.comment;
   const prepared=form.querySelector('.prepared-message'),preview=form.querySelector('#request-preview'),status=form.querySelector('.form-status'),manualOpen=form.querySelector('.prepared-open');
+  const selection = form.querySelector('.request-selection');
+  const selectedOption = () => service.selectedOptions[0];
+  const showSelection = () => {
+    const option = selectedOption();
+    selection.textContent = option.value === 'other' ? '' : option.textContent;
+    selection.hidden = !selection.textContent;
+  };
   const profiles={telegram:'https://t.me/+79088990088?profile',max:'https://max.ru/u/f9LHodD0cOI3lG2rCNUhXaH2sHDji6eki00A8hQZEJLe7xK2dwy4zaDRH88'};
   let revision=0;
   const clearOutput=()=>{revision++;prepared.hidden=true;preview.value='';status.textContent='';manualOpen.hidden=true;manualOpen.href='#';};
   const error=(input,id,message)=>{document.getElementById(id).textContent=message;input.setAttribute('aria-invalid',String(Boolean(message)));};
   const validate=()=>{const digits=phone.value.replace(/\D/g,'');error(name,'name-error',name.value.trim()?'':'Укажите ваше имя.');error(phone,'phone-error',digits.length>=7&&digits.length<=18?'':'Укажите телефон: от 7 до 18 цифр.');const invalid=[name,phone].find(el=>el.getAttribute('aria-invalid')==='true');if(invalid){invalid.focus();return false;}return true;};
-  const message=()=>`Здравствуйте, Евгений.\n\n${service.value.startsWith('Бесплатное демо')?'Хочу получить бесплатное демо сайта.':'Хочу обсудить создание сайта.'}\n\nУслуга:\n${service.value}\n\nИмя:\n${name.value.trim()}\n\nТелефон:\n${phone.value.trim()}${comment.value.trim()?'\n\nКомментарий:\n'+comment.value.trim():''}`;
+  const message = () => {
+    const option = selectedOption();
+    const intro = option.value === 'demo' ? 'Хочу получить бесплатное демо сайта.' : 'Хочу обсудить задачу.';
+    const note = comment.value.trim();
+    return `Здравствуйте, Евгений.\n\n${intro}\n\nУслуга:\n${option.textContent}\n\nИмя:\n${name.value.trim()}\n\nТелефон:\n${phone.value.trim()}${note ? '\n\nКомментарий:\n' + note : ''}`;
+  };
   document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',event=>{
     if(typeof dialog.showModal!=='function')return;
-    event.preventDefault();clearOutput();service.value=link.dataset.service;dialog.returnFocus=link;dialog.showModal();document.body.classList.add('dialog-open');
+    event.preventDefault();
+    clearOutput();
+    service.value = link.dataset.service;
+    showSelection();
+    dialog.returnFocus = link.closest('#menu-dialog') ? document.querySelector('.menu-toggle') : link;
+    dialog.showModal();
+    document.body.classList.add('dialog-open');
     // Keep the introduction visible on phones; the user opens the keyboard explicitly.
     dialog.querySelector('[data-close]').focus({preventScroll:true});dialog.scrollTop=0;
   }));
   form.addEventListener('submit',event=>event.preventDefault());
   form.addEventListener('input',event=>{if(event.target===preview)return;clearOutput();if(event.target===name)error(name,'name-error','');if(event.target===phone)error(phone,'phone-error','');});
-  dialog.addEventListener('close',()=>{clearOutput();form.reset();error(name,'name-error','');error(phone,'phone-error','');});
+  service.addEventListener('change', showSelection);
+  dialog.addEventListener('close',()=>{clearOutput();form.reset();showSelection();error(name,'name-error','');error(phone,'phone-error','');});
   const copy=async text=>{try{await navigator.clipboard.writeText(text);return true;}catch{return false;}};
   form.querySelector('[data-copy-request]').addEventListener('click',async()=>{
     const text=preview.value,version=revision;if(!text)return;
@@ -29,7 +48,7 @@
     const text=message(),channel=button.dataset.channel,version=++revision;
     preview.value=text;prepared.hidden=false;manualOpen.hidden=true;
     if(channel==='email'){
-      const subject='Заявка с сайта — '+service.value.split(' — ')[0];
+      const subject='Заявка с сайта — '+selectedOption().dataset.name;
       status.textContent='Письмо подготовлено. Проверьте его в почтовой программе и отправьте самостоятельно.';
       window.location.href=`mailto:evsavelev.region@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
       return;

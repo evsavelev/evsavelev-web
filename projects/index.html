@@ -20,8 +20,8 @@
   <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="../assets/fonts/inter-cyrillic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="../assets/fonts/fonts.css?v=20260925-6">
-  <link rel="stylesheet" href="../styles.css?v=20260925-6">
-  <script src="../app.js?v=20260925-6" defer></script>
+  <link rel="stylesheet" href="../styles.css?v={{CATALOG_VERSION}}">
+  <script src="../app.js?v={{CATALOG_VERSION}}" defer></script>
   <!-- ANALYTICS_HEAD -->
 </head>
 <body class="projects-page">
@@ -41,7 +41,7 @@
       <a href="../#about">Обо мне</a>
       <a href="../#contact">Контакты</a>
     </nav>
-    <a class="button button-small header-cta" href="../#contact">Получить демо за 0 ₽</a>
+    <a class="button button-small header-cta" href="../#contact">Получить демо за {{DEMO_PRICE}}</a>
     <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-haspopup="dialog" aria-controls="menu-dialog" hidden>Меню <span aria-hidden="true">☰</span></button>
   </div>
 </header>
@@ -67,7 +67,7 @@
       <p class="eyebrow reveal">Ваш проект может быть следующим</p>
       <h2 class="reveal">Покажите мне ваш бизнес —<br><em>я покажу, каким может быть его сайт.</em></h2>
       <div class="final-cta-bottom reveal">
-        <div><a class="button button-light" href="../#contact">Получить демо за 0 ₽ ↗</a><p class="final-note">0 ₽ / без договора / без предоплаты</p></div>
+        <div><a class="button button-light" href="../#contact">Получить демо за {{DEMO_PRICE}} ↗</a><p class="final-note">{{DEMO_PRICE}} / без договора / без предоплаты</p></div>
         <div class="contact-stack">
           <a href="tel:+79088990088"><small>Телефон</small><span>+7 908 899-00-88 ↗</span></a>
           <a href="https://wa.me/79088990088" target="_blank" rel="noopener noreferrer"><small>Мессенджер</small><span>WhatsApp ↗</span></a>
@@ -93,7 +93,7 @@
   <nav aria-label="Мобильная навигация">
     <a href="../#projects">Проекты <span>↗</span></a><a href="../#reviews">Отзывы <span>↗</span></a><a href="../#directions">Услуги <span>↗</span></a><a href="../#prices">Стоимость <span>↗</span></a><a href="../#about">Обо мне <span>↗</span></a><a href="../#contact">Контакты <span>↗</span></a>
   </nav>
-  <a class="menu-demo" href="../#contact">Получить демо за 0 ₽ ↗</a>
+  <a class="menu-demo" href="../#contact">Получить демо за {{DEMO_PRICE}} ↗</a>
   <a class="menu-phone" href="tel:+79088990088">+7 908 899-00-88</a>
 </dialog>
 </body>
