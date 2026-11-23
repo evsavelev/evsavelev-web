@@ -35,13 +35,13 @@ must(projects.includes('<a href="../#reviews">Отзывы</a>') &&
 
 must(home.includes('<link rel="canonical" href="https://evsavelev.ru/">'), 'home canonical');
 must(home.includes('<meta property="og:url" content="https://evsavelev.ru/">'), 'home og:url');
-must(home.includes('https://evsavelev.ru/assets/og.jpg'), 'home og:image');
+must(home.includes('https://evsavelev.ru/assets/brand/social-preview.jpg'), 'home og:image');
 must(home.includes('"@id":"https://evsavelev.ru/#person"'), 'Schema.org person id');
 must(home.includes('"url":"https://evsavelev.ru/"'), 'Schema.org person url');
 
 must(projects.includes('<link rel="canonical" href="https://evsavelev.ru/projects/">'), 'projects canonical');
 must(projects.includes('<meta property="og:url" content="https://evsavelev.ru/projects/">'), 'projects og:url');
-must(projects.includes('https://evsavelev.ru/assets/og.jpg'), 'projects og:image');
+must(projects.includes('https://evsavelev.ru/assets/brand/social-preview.jpg'), 'projects og:image');
 const stylesVersion = home.match(/href="styles\.css\?v=([\d-]+)"/)?.[1];
 const appVersion = home.match(/src="app\.js\?v=([\d-]+)"/)?.[1];
 must(stylesVersion && projects.includes(`../styles.css?v=${stylesVersion}`), 'shared CSS cache bust');
@@ -94,10 +94,19 @@ must(sitemap.includes('<loc>https://evsavelev.ru/</loc>'), 'sitemap home');
 must(sitemap.includes('<loc>https://evsavelev.ru/projects/</loc>'), 'sitemap projects');
 must(!sitemap.includes('github.io'), 'sitemap has no GitHub Pages URL');
 must(notFound.includes('href="/"'), '404 returns to production root');
-must(fs.existsSync(path.join(root,'assets','og.jpg')), 'OpenGraph image exists');
-must(fs.existsSync(path.join(root,'assets','favicon.svg')), 'favicon exists');
+for (const asset of ['logo.webp', 'favicon.png', 'apple-touch-icon.png', 'social-preview.jpg']) {
+  must(fs.existsSync(path.join(root, 'assets', 'brand', asset)), `brand asset exists: ${asset}`);
+}
+for (const [name, html] of [['home', home], ['projects', projects], ['404', notFound]]) {
+  must(html.includes('assets/brand/logo.webp'), `${name} brand logo`);
+  must(html.includes('assets/brand/favicon.png'), `${name} brand favicon`);
+  must(html.includes('assets/brand/apple-touch-icon.png'), `${name} Apple touch icon`);
+  must(!html.includes('brand-monogram'), `${name} obsolete monogram removed`);
+}
+must(home.includes('id="hero-title" class="hero-title">Создаю сайты <em>для бизнеса</em>'), 'concise home title');
+must(home.includes('class="hero-preview" href="https://evsavelev.github.io/tehnologiya-nizhnevartovsk/"'), 'front-page preview opens the real project');
 
-for (const token of ['<!-- HOME_PROJECTS -->','<!-- PRICING -->','<!-- SERVICE_OPTIONS -->','<!-- ALL_PROJECTS -->','{{CATALOG_VERSION}}','{{DEMO_PRICE}}']) {
+for (const token of ['<!-- HOME_PROJECTS -->','<!-- PRICING -->','<!-- SERVICE_OPTIONS -->','<!-- ALL_PROJECTS -->','{{PAGE_VERSION}}', '<!-- HERO_PROJECT -->','{{DEMO_PRICE}}']) {
   must(!home.includes(token) && !projects.includes(token), 'build placeholder resolved: ' + token);
 }
 

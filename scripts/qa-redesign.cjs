@@ -96,7 +96,17 @@ async function checkHome(browser, width) {
   expect(layout.brokenImages).toEqual([]);
   expect(layout.missingAnchors).toEqual([]);
 
-  await expect(page.locator("h1")).toContainText("Создаю сайты");
+  await expect(page.locator("h1")).toHaveText("Создаю сайты для бизнеса");
+  await expect(page.locator(".site-header .brand-logo")).toBeVisible();
+  await expect(page.locator(".hero-preview")).toHaveAttribute("href", "https://evsavelev.github.io/tehnologiya-nizhnevartovsk/");
+  if (width <= 430) {
+    const title = await page.locator(".hero-title").boundingBox();
+    const actions = await page.locator(".hero-actions").boundingBox();
+    const preview = await page.locator(".hero-preview").boundingBox();
+    expect(title.height).toBeLessThan(120);
+    expect(actions.y + actions.height).toBeLessThan(460);
+    expect(preview.y).toBeLessThan(540);
+  }
   await expect(page.locator(".editorial-grid .project-card")).toHaveCount(8);
   const reviews = page.locator("#reviews");
   await expect(reviews).toBeVisible();
@@ -116,7 +126,7 @@ async function checkHome(browser, width) {
   const catalog = page.locator("#prices");
   await expect(catalog.locator(".price-item")).toHaveCount(12);
   await expect(catalog.locator(".price-group")).toHaveCount(6);
-  await expect(page.locator(".hero-offer")).toContainText("Актуальные цены на разработку сайтов");
+  await expect(page.locator(".hero-prices")).toHaveAttribute("href", "#prices");
   await expect(page.locator("#service-business-card .price-value")).toHaveText("от 17 500 ₽");
   await expect(page.locator("#service-landing .price-value")).toHaveText("от 25 000 ₽");
 
@@ -269,7 +279,8 @@ async function checkProjects(browser, width) {
   await expect(nojs.locator("#service-business-card details p")).toBeVisible();
   await nojs.locator("#service-business-card [data-service]").click();
   await expect(nojs).toHaveURL(/#contact$/);
-  await expect(nojs.locator(".hero .reveal").first()).toBeVisible();
+  await expect(nojs.locator(".hero-title")).toBeVisible();
+  await expect(nojs.locator(".hero-preview img")).toBeVisible();
   await expect(nojs.locator("#directions .reveal").first()).toBeVisible();
   await expect(nojs.locator("#projects .project-card").first()).toBeVisible();
   await expect(nojs.locator("#about .reveal").first()).toBeVisible();
