@@ -8,13 +8,24 @@ const isProduction = process.env.PRODUCTION === '1';
 const projects = require('../data/projects.json');
 const services = require('../data/services.json');
 const assetVersion = '20260925-6';
-const catalogVersion = '20261123-1';
+const pageVersion = '20261123-2';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
 }[char]));
 
 const projectUrl = project => project.url || `https://evsavelev.github.io/${project.slug}/`;
+
+const feature = projects.find(project => project.slug === 'tehnologiya-nizhnevartovsk');
+const featureImage = `assets/portfolio/${feature.slug}`;
+const homeFeature = `<a class="hero-preview" href="${escape(projectUrl(feature))}" target="_blank" rel="noopener noreferrer" aria-label="Открыть сайт «${escape(feature.name)}» в новой вкладке">
+        <span class="hero-preview-bar"><span>Проект «${escape(feature.name)}»</span><span aria-hidden="true">↗</span></span>
+        <img src="${featureImage}-720.webp?v=${assetVersion}"
+             srcset="${featureImage}-720.webp?v=${assetVersion} 720w, ${featureImage}-1440.webp?v=${assetVersion} 1440w"
+             sizes="(max-width: 767px) calc(100vw - 40px), 48vw"
+             width="1440" height="1000" fetchpriority="high" decoding="async"
+             alt="Главная страница сайта компании «${escape(feature.name)}»">
+      </a>`;
 
 const homeClass = index => {
   const classes = ['project--wide','project--side','','','project--side','project--wide','',''];
@@ -103,10 +114,11 @@ const projectsTemplate = fs.readFileSync(path.join(root, 'projects', 'index.html
 
 const mainHtml = render(mainTemplate, {
   '<!-- HOME_PROJECTS -->': homeProjects,
+  '<!-- HERO_PROJECT -->': homeFeature,
   '<!-- PRICING -->': pricing,
   '<!-- SERVICE_OPTIONS -->': options,
   '{{DEMO_PRICE}}': escape(formatPrice(demo)),
-  '{{CATALOG_VERSION}}': catalogVersion,
+  '{{PAGE_VERSION}}': pageVersion,
   '<!-- ANALYTICS_HEAD -->': metrikaHead,
   '<!-- ANALYTICS_BODY -->': metrikaBody
 });
@@ -114,7 +126,7 @@ const mainHtml = render(mainTemplate, {
 const projectsHtml = render(projectsTemplate, {
   '<!-- ALL_PROJECTS -->': allProjects,
   '{{DEMO_PRICE}}': escape(formatPrice(demo)),
-  '{{CATALOG_VERSION}}': catalogVersion,
+  '{{PAGE_VERSION}}': pageVersion,
   '<!-- ANALYTICS_HEAD -->': metrikaHead,
   '<!-- ANALYTICS_BODY -->': metrikaBody
 });
