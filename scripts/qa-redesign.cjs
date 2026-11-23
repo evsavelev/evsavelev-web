@@ -130,15 +130,15 @@ async function checkHome(browser, width) {
       await expect(page.locator("#request-service")).toHaveValue(await action.getAttribute("data-service"));
       await expect(page.locator(".request-selection")).toHaveText(`${title} — ${price}`);
       await page.keyboard.press("Escape");
+      await expect(page.locator("body")).not.toHaveClass(/dialog-open/);
       await expect(action).toBeFocused();
     }
     await expect(page.locator("#request-service optgroup option")).toHaveCount(12);
     const details = cards.first().locator("summary");
-    await details.focus();
-    await page.keyboard.press("Enter");
-    await expect(cards.first().locator("details")).toHaveAttribute("open", "");
-    await page.keyboard.press("Enter");
-    await expect(cards.first().locator("details")).not.toHaveAttribute("open", "");
+    await details.press("Enter");
+    await expect(cards.first().locator("details p")).toBeVisible();
+    await details.press("Enter");
+    await expect(cards.first().locator("details p")).not.toBeVisible();
   }
 
   const featuredCards = page.locator(".editorial-grid .project-card");
