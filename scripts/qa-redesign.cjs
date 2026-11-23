@@ -113,15 +113,32 @@ async function checkHome(browser, width) {
   expect(sectionOrder.projects).toBeLessThan(sectionOrder.reviews);
   expect(sectionOrder.reviews).toBeLessThan(sectionOrder.process);
 
-  await expect(page.locator(".price-list .price-item")).toHaveCount(5);
-  await expect(page.locator(".hero-offer")).toContainText("−50%");
-  await expect(page.locator(".hero-offer")).toContainText("31 декабря 2026");
-  await expect(page.locator(".pricing-promo")).toContainText("Скидка 50%");
-  for (const price of ["от 17 500 ₽","от 30 000 ₽","от 50 000 ₽","от 65 000 ₽","от 80 000 ₽"]) {
-    await expect(page.locator(".price-value").filter({ hasText: price })).toHaveCount(1);
-  }
-  for (const oldPrice of ["от 35 000 ₽","от 60 000 ₽","от 100 000 ₽","от 130 000 ₽","от 160 000 ₽"]) {
-    await expect(page.locator(".price-old").filter({ hasText: oldPrice })).toHaveCount(1);
+  const catalog = page.locator("#prices");
+  await expect(catalog.locator(".price-item")).toHaveCount(12);
+  await expect(catalog.locator(".price-group")).toHaveCount(6);
+  await expect(page.locator(".hero-offer")).toContainText("Актуальные цены на разработку сайтов");
+  await expect(page.locator("#service-business-card .price-value")).toHaveText("от 17 500 ₽");
+  await expect(page.locator("#service-landing .price-value")).toHaveText("от 25 000 ₽");
+
+  if ([360, 390, 430, 768, 1440].includes(width)) {
+    const cards = catalog.locator(".price-item");
+    for (const card of await cards.all()) {
+      const title = await card.locator("h4").innerText();
+      const price = await card.locator(".price-value").innerText();
+      const action = card.locator("[data-service]");
+      await action.click();
+      await expect(page.locator("#request-service")).toHaveValue(await action.getAttribute("data-service"));
+      await expect(page.locator(".request-selection")).toHaveText(`${title} — ${price}`);
+      await page.keyboard.press("Escape");
+      await expect(action).toBeFocused();
+    }
+    await expect(page.locator("#request-service optgroup option")).toHaveCount(12);
+    const details = cards.first().locator("summary");
+    await details.focus();
+    await page.keyboard.press("Enter");
+    await expect(cards.first().locator("details")).toHaveAttribute("open", "");
+    await page.keyboard.press("Enter");
+    await expect(cards.first().locator("details")).not.toHaveAttribute("open", "");
   }
 
   const featuredCards = page.locator(".editorial-grid .project-card");
@@ -148,7 +165,7 @@ async function checkHome(browser, width) {
   const heroCta = page.locator(".hero [data-service]").first();
   await heroCta.click();
   await expect(page.locator("#request-dialog")).toBeVisible();
-  await expect(page.locator("#request-service")).toHaveValue("Бесплатное демо — 0 ₽");
+  await expect(page.locator("#request-service")).toHaveValue("demo");
   expect(await page.locator("#request-dialog").evaluate(e => e.scrollWidth <= e.clientWidth)).toBe(true);
 
   await page.locator('[data-channel="whatsapp"]').click();
@@ -232,7 +249,7 @@ async function checkProjects(browser, width) {
 }
 
 (async () => {
-  const browser = await chromium.launch({ headless: true });
+  const browser = await chromium.launch({ headless: true, executablePath: process.env.QA_CHROMIUM });
 
   for (const width of widths) await checkHome(browser, width);
   for (const width of [360, 390, 430, 1024, 1440, 1920, 2048]) await checkProjects(browser, width);
@@ -247,9 +264,11 @@ async function checkProjects(browser, width) {
   const nojs = await browser.newPage({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
   await nojs.goto(base, { waitUntil: "networkidle" });
   await expect(nojs.locator(".editorial-grid .project-card")).toHaveCount(8);
-  await expect(nojs.locator(".price-list .price-item")).toHaveCount(5);
-  await expect(nojs.locator(".hero-offer")).toContainText("−50%");
-  await expect(nojs.locator(".pricing-promo")).toContainText("Скидка 50%");
+  await expect(nojs.locator(".price-list .price-item")).toHaveCount(12);
+  await nojs.locator("#service-business-card summary").click();
+  await expect(nojs.locator("#service-business-card details p")).toBeVisible();
+  await nojs.locator("#service-business-card [data-service]").click();
+  await expect(nojs).toHaveURL(/#contact$/);
   await expect(nojs.locator(".hero .reveal").first()).toBeVisible();
   await expect(nojs.locator("#directions .reveal").first()).toBeVisible();
   await expect(nojs.locator("#projects .project-card").first()).toBeVisible();
@@ -264,7 +283,6 @@ async function checkProjects(browser, width) {
 
   const report = {
     passed: true,
-    branch: "feat/request-architecture-v4",
     checkedWidths: widths,
     pages: ["home", "projects"],
     checks,

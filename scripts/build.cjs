@@ -8,6 +8,7 @@ const isProduction = process.env.PRODUCTION === '1';
 const projects = require('../data/projects.json');
 const services = require('../data/services.json');
 const assetVersion = '20260925-6';
+const catalogVersion = '20261123-1';
 
 const escape = value => String(value).replace(/[&<>"']/g, char => ({
   '&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'
@@ -41,64 +42,41 @@ const card = (project, index, {prefix = '', editorial = false} = {}) => {
 const homeProjects = projects.slice(0, 8).map((project, index) => card(project, index, {editorial:true})).join('\n');
 const allProjects = projects.map((project, index) => card(project, index, {prefix:'../'})).join('\n');
 
-const pricingMeta = [
-  {
-    audience:'Для одной услуги, продукта, рекламной кампании или отдельного направления.',
-    duration:'Ориентир: 7–14 рабочих дней',
-    included:['Структура одной страницы','Индивидуальный дизайн','Адаптивная разработка','Форма обращения и контакты']
-  },
-  {
-    audience:'Для бизнеса, которому нужно представить компанию, услуги, работы и преимущества.',
-    duration:'Ориентир: 2–3 недели',
-    included:['Структура основных разделов','Дизайн и мобильная версия','Страницы услуг и компании','Формы и контакты']
-  },
-  {
-    audience:'Для компаний с несколькими направлениями и большим объёмом информации.',
-    duration:'Ориентир: 3–5 недель',
-    included:['Многостраничная архитектура','Единая дизайн-система','Разделы направлений','Интеграции по задаче']
-  },
-  {
-    audience:'Для производителей, поставщиков и бизнеса с большим ассортиментом.',
-    duration:'Ориентир: 4–6 недель',
-    included:['Категории и карточки','Фильтрация и навигация','Адаптивный интерфейс','Управление ассортиментом по задаче']
-  },
-  {
-    audience:'Для нестандартных сценариев, CMS, админ-панели, личного кабинета или специальных интеграций.',
-    duration:'Срок — после оценки задачи',
-    included:['Проработка сценариев','Индивидуальные интерфейсы','Нужные интеграции','Разработка под согласованный функционал']
-  }
-];
+const activeServices = services.filter(service => service.active).sort((a, b) => a.order - b.order);
+const demo = activeServices.find(service => service.id === 'demo');
+const categories = Object.groupBy(activeServices.filter(service => service.startPrice > 0), service => service.category);
+const formatPrice = service => {
+  const amount = new Intl.NumberFormat('ru-RU', {
+    style: 'currency', currency: service.currency, maximumFractionDigits: 0
+  }).format(service.startPrice).replaceAll('\u00a0', ' ');
+  return service.startPrice > 0 ? `от ${amount}` : amount;
+};
 
-const pricing = services.slice(1).map((service, index) => {
-  const meta = pricingMeta[index];
-  return `<details class="price-item reveal" data-price-name="${escape(service.name)}" ${index === 0 ? 'open' : ''}>
-    <summary>
-      <h3>${escape(service.name)}</h3>
-      <span class="price-stack"><span class="price-old">${escape(service.regularPrice || '')}</span><span class="price-value">${escape(service.price)}</span></span>
-      <span class="price-plus" aria-hidden="true">+</span>
-    </summary>
-    <div class="price-detail">
-      <div>
-        <p class="price-detail-intro">${escape(meta.audience)}</p>
-        <p class="price-scope">${escape(meta.duration)}</p><p class="price-promo-note">Цена со скидкой 50% до 31.12.2026</p>
-      </div>
-      <div>
-        <div class="price-specs">
-          <div><h4>Что входит</h4><ul>${meta.included.map(item => `<li>${escape(item)}</li>`).join('')}</ul></div>
-          <div><h4>Формат</h4><ul><li>${escape(service.description)}</li><li>Мобильная версия</li><li>Базовая SEO-подготовка</li><li>Техническая проверка и публикация</li></ul></div>
-        </div>
-        <div class="price-cta">
-          <p class="price-scope">Точный объём, сроки и стоимость фиксируем до начала основной разработки.</p>
-          <a href="#contact" class="button" data-service="${escape(service.selection)}">${escape(service.cta)} ↗</a>
-        </div>
-      </div>
+const pricing = Object.entries(categories).map(([category, items], index) => `<section class="price-group" aria-labelledby="price-group-${index + 1}">
+  <h3 id="price-group-${index + 1}">${escape(category)}</h3>
+  ${items.map(service => `<article class="price-item" id="service-${escape(service.id)}" aria-labelledby="service-${escape(service.id)}-title">
+    <div class="price-copy">
+      <h4 id="service-${escape(service.id)}-title">${escape(service.name)}</h4>
+      <p>${escape(service.summary)}</p>
+      <details class="price-details">
+        <summary aria-describedby="service-${escape(service.id)}-title">Подробнее</summary>
+        <p>${escape(service.description)}</p>
+      </details>
     </div>
-  </details>`;
-}).join('\n');
+    <div class="price-action">
+      <p class="price-value">${escape(formatPrice(service))}</p>
+      <a href="#contact" class="button button-small" data-service="${escape(service.id)}" aria-describedby="service-${escape(service.id)}-title">${escape(service.cta)} <span aria-hidden="true">↗</span></a>
+    </div>
+  </article>`).join('\n  ')}
+</section>`).join('\n');
 
-const options = [...services.map(service => service.selection), 'Другое']
-  .map(value => `<option>${escape(value)}</option>`)
-  .join('');
+const serviceOption = service => `<option value="${escape(service.id)}" data-name="${escape(service.name)}">${escape(`${service.name} — ${formatPrice(service)}`)}</option>`;
+const options = [
+  serviceOption(demo),
+  ...Object.entries(categories).map(([category, items]) =>
+    `<optgroup label="${escape(category)}">${items.map(serviceOption).join('')}</optgroup>`),
+  '<option value="other" data-name="Другое">Другое</option>'
+].join('\n');
 
 const metrikaHead = isProduction ? `<!-- Yandex.Metrika counter -->
 <script type="text/javascript">
@@ -118,7 +96,7 @@ const metrikaBody = isProduction ? `<!-- Yandex.Metrika counter: fallback withou
 <!-- /Yandex.Metrika counter -->` : '';
 
 const render = (template, replacements) => Object.entries(replacements)
-  .reduce((html, [marker, value]) => html.replace(marker, value), template);
+  .reduce((html, [marker, value]) => html.replaceAll(marker, () => value), template);
 
 const mainTemplate = fs.readFileSync(path.join(root, 'index.html'), 'utf8');
 const projectsTemplate = fs.readFileSync(path.join(root, 'projects', 'index.html'), 'utf8');
@@ -127,12 +105,16 @@ const mainHtml = render(mainTemplate, {
   '<!-- HOME_PROJECTS -->': homeProjects,
   '<!-- PRICING -->': pricing,
   '<!-- SERVICE_OPTIONS -->': options,
+  '{{DEMO_PRICE}}': escape(formatPrice(demo)),
+  '{{CATALOG_VERSION}}': catalogVersion,
   '<!-- ANALYTICS_HEAD -->': metrikaHead,
   '<!-- ANALYTICS_BODY -->': metrikaBody
 });
 
 const projectsHtml = render(projectsTemplate, {
   '<!-- ALL_PROJECTS -->': allProjects,
+  '{{DEMO_PRICE}}': escape(formatPrice(demo)),
+  '{{CATALOG_VERSION}}': catalogVersion,
   '<!-- ANALYTICS_HEAD -->': metrikaHead,
   '<!-- ANALYTICS_BODY -->': metrikaBody
 });
